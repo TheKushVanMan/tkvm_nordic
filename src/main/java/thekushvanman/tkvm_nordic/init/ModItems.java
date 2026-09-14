@@ -27,6 +27,9 @@ public class ModItems {
     public static final RegistryObject<Item> NORSE_SWORD = ITEMS.register("norse_sword",
             () -> new SwordItem(NORDIC_TIER, 3, -2.4F, new Item.Properties()));
 
+    public static final RegistryObject<Item> HAND_AXE = ITEMS.register("hand_axe",
+            () -> new AxeItem(NORDIC_TIER, 7.0F, -3.2F, new Item.Properties()));
+
     public static final RegistryObject<Item> DANE_AXE = ITEMS.register("dane_axe",
             () -> new AxeItem(NORDIC_TIER, 7.0F, -3.2F, new Item.Properties()));
 
@@ -39,6 +42,4 @@ public class ModItems {
     public static final RegistryObject<Item> ROUNDSHIELD = ITEMS.register("roundshield",
             () -> new ShieldItem(new Item.Properties().durability(336)));
 
-    // Call this from Tkvm_nordic's constructor:
-    //     ModItems.ITEMS.register(modEventBus);
 }
