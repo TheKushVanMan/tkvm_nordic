@@ -27,6 +27,9 @@ public class ModItems {
     public static final RegistryObject<Item> NORSE_SWORD = ITEMS.register("norse_sword",
             () -> new SwordItem(NORDIC_TIER, 3, -2.4F, new Item.Properties()));
 
+    public static final RegistryObject<Item> NORSE_LONGSWORD = ITEMS.register("norse_longsword",
+            () -> new SwordItem(NORDIC_TIER, 4, -2.2F, new Item.Properties()));
+
     public static final RegistryObject<Item> HAND_AXE = ITEMS.register("hand_axe",
             () -> new AxeItem(NORDIC_TIER, 7.0F, -3.2F, new Item.Properties()));
 
