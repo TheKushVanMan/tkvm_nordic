@@ -14,8 +14,6 @@ public class KonungrRenderer extends HumanoidMobRenderer<KonungrEntity, Humanoid
             new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/konungr.png");
 
     public KonungrRenderer(EntityRendererProvider.Context context) {
-        // Slightly larger shadow radius to reflect boss scale; swap in a custom model
-        // (e.g. a taller HumanoidModel) once you have Heimdall's dedicated geometry.
         super(context, new HumanoidModel<>(context.bakeLayer(ModelLayers.PLAYER)), 0.7F);
     }
 

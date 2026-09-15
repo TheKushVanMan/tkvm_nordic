@@ -1,6 +1,9 @@
 package thekushvanman.tkvm_nordic.entity;
 
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -10,7 +13,9 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import thekushvanman.tkvm_nordic.init.ModItems;
 
 /**
  * Heimdall - Tier 3 boss unit. A human who has earned a god's name as a title.
@@ -21,6 +26,8 @@ public class EinherjarEntity extends Monster {
 
     public EinherjarEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.NORSE_LONGSWORD.get()));
+        this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.ROUNDSHIELD.get()));
     }
 
     public static AttributeSupplier.Builder createAttributes() {

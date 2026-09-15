@@ -6,6 +6,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import thekushvanman.tkvm_nordic.client.renderer.EinherjarRenderer;
 import thekushvanman.tkvm_nordic.init.ModEntities;
 import thekushvanman.tkvm_nordic.Tkvm_nordic;
 import thekushvanman.tkvm_nordic.client.renderer.DrengrRenderer;
@@ -26,7 +27,7 @@ public class NordicClientEvents {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.KRIEGSMAN.get(), KriegsmanRenderer::new);
         event.registerEntityRenderer(ModEntities.DRENGR.get(), DrengrRenderer::new);
-        event.registerEntityRenderer(ModEntities.EINHERJAR.get(), DrengrRenderer::new);
+        event.registerEntityRenderer(ModEntities.EINHERJAR.get(), EinherjarRenderer::new);
         event.registerEntityRenderer(ModEntities.KONUNGR.get(), KonungrRenderer::new);
     }
 

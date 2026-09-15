@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import thekushvanman.tkvm_nordic.Tkvm_nordic;
 import thekushvanman.tkvm_nordic.entity.DrengrEntity;
+import thekushvanman.tkvm_nordic.entity.EinherjarEntity;
 import thekushvanman.tkvm_nordic.entity.KonungrEntity;
 import thekushvanman.tkvm_nordic.entity.KriegsmanEntity;
 
@@ -27,8 +28,8 @@ public class ModEntities {
                     .sized(0.6F, 1.95F)
                     .build("drengr"));
 
-    public static final RegistryObject<EntityType<DrengrEntity>> EINHERJAR = ENTITY_TYPES.register("einherjar",
-            () -> EntityType.Builder.of(DrengrEntity::new, MobCategory.MONSTER)
+    public static final RegistryObject<EntityType<EinherjarEntity>> EINHERJAR = ENTITY_TYPES.register("einherjar",
+            () -> EntityType.Builder.of(EinherjarEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F)
                     .build("einherjar"));
 
@@ -39,6 +40,4 @@ public class ModEntities {
                     .fireImmune()
                     .build("konungr"));
 
-    // Call this from Tkvm_nordic's constructor:
-    //     ModEntities.ENTITY_TYPES.register(modEventBus);
 }
