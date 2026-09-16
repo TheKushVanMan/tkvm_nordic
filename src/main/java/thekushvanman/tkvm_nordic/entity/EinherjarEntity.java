@@ -1,7 +1,5 @@
 package thekushvanman.tkvm_nordic.entity;
 
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -15,18 +13,16 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import thekushvanman.tkvm_nordic.init.ModItems;
 
-/**
- * Heimdall - Tier 3 boss unit. A human who has earned a god's name as a title.
- * Watchman/vanguard archetype: high detection range, alerts nearby units.
- * Extend with a custom "alert" ability (buff/summon nearby mobs) as a next step.
- */
+
 public class EinherjarEntity extends Monster {
 
     public EinherjarEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.BEARDED_AXE.get()));
+        this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ModItems.WORN_HAUBERK_HELMET.get()));
         this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(ModItems.WORN_HAUBERK.get()));
         this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ModItems.WORN_HAUBERK_LEGGINGS.get()));
     }
@@ -41,11 +37,13 @@ public class EinherjarEntity extends Monster {
                 .add(Attributes.FOLLOW_RANGE, 48.0D); // long "watchman" detection range
     }
 
+
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
     }
 }

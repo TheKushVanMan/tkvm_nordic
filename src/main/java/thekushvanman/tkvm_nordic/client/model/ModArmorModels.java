@@ -17,8 +17,10 @@ public class ModArmorModels {
             new ModelLayerLocation(new ResourceLocation(Tkvm_nordic.MODID, "generic_outer"), "main");
     public static final ModelLayerLocation GENERIC_INNER =
             new ModelLayerLocation(new ResourceLocation(Tkvm_nordic.MODID, "generic_inner"), "main");
-    public static final ModelLayerLocation SPANGENHELM =
-            new ModelLayerLocation(new ResourceLocation(Tkvm_nordic.MODID, "spangenhelm"), "main");
+    public static final ModelLayerLocation HAUBERK_HELMET =
+            new ModelLayerLocation(new ResourceLocation(Tkvm_nordic.MODID, "hauberk_helmet"), "main");
+    public static final ModelLayerLocation WORN_HAUBERK_HELMET =
+            new ModelLayerLocation(new ResourceLocation(Tkvm_nordic.MODID, "worn_hauberk_helmet"), "main");
 
     public static LayerDefinition createGenericOuterLayer() {
         return LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.6F), 0.0F), 64, 32);
@@ -28,24 +30,33 @@ public class ModArmorModels {
         return LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(0.5F), 0.0F), 64, 32);
     }
 
-    public static LayerDefinition createSpangenhelmLayer() {
+    public static LayerDefinition createHauberkHelmetLayer() {
         MeshDefinition meshdefinition = HumanoidModel.createMesh(new CubeDeformation(0.6F), 0.0F);
         PartDefinition partdefinition = meshdefinition.getRoot();
-
-        // Dome — sits slightly proud of the vanilla head cube
-        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create()
-                        .texOffs(0, 0).addBox(-4.0F, -9.0F, -4.0F, 8.0F, 9.0F, 8.0F, new CubeDeformation(0.55F)),
+        partdefinition.addOrReplaceChild("head", CubeListBuilder.create()
+                        .texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F))
+                        .texOffs(52, 59).addBox(-1.5F, -12.25F, -1.75F, 3.0F, 2.0F, 3.0F, new CubeDeformation(0.0F))
+                        .texOffs(0, 55).addBox(-3.5F, -10.25F, -3.75F, 7.0F, 2.0F, 7.0F, new CubeDeformation(0.0F)),
                 PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        // Nasal guard — thin bar dropping down the front of the face
-        head.addOrReplaceChild("nasal_guard", CubeListBuilder.create()
-                        .texOffs(32, 0).addBox(-0.5F, -1.0F, -5.2F, 1.0F, 5.0F, 1.0F, new CubeDeformation(0.0F)),
-                PartPose.offset(0.0F, -8.0F, 0.0F));
+        partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("left_leg", CubeListBuilder.create(), PartPose.ZERO);
 
-        // Brow band — thin rim around the base of the dome (spangenhelm banding)
-        head.addOrReplaceChild("brow_band", CubeListBuilder.create()
-                        .texOffs(0, 20).addBox(-4.2F, -1.0F, -4.2F, 8.4F, 1.0F, 8.4F, new CubeDeformation(0.0F)),
-                PartPose.offset(0.0F, -8.0F, 0.0F));
+        return LayerDefinition.create(meshdefinition, 64, 64);
+    }
+
+    public static LayerDefinition createWornHauberkHelmetLayer() {
+        MeshDefinition meshdefinition = HumanoidModel.createMesh(new CubeDeformation(0.6F), 0.0F);
+        PartDefinition partdefinition = meshdefinition.getRoot();
+        partdefinition.addOrReplaceChild("head", CubeListBuilder.create()
+                        .texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F))
+                        .texOffs(52, 59).addBox(-1.5F, -12.25F, -1.75F, 3.0F, 2.0F, 3.0F, new CubeDeformation(0.0F))
+                        .texOffs(0, 55).addBox(-3.5F, -10.25F, -3.75F, 7.0F, 2.0F, 7.0F, new CubeDeformation(0.0F)),
+                PartPose.offset(0.0F, 0.0F, 0.0F));
 
         partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
         partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.ZERO);

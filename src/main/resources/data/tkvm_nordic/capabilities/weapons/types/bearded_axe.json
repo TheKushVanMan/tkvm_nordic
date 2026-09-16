@@ -14,7 +14,7 @@
       "run": "epicfight:biped/living/run_greatsword",
       "block": "epicfight:biped/skill/guard_spear",
       "sneak": "epicfight:biped/living/hold_greatsword",
-      "kneel": "epicfight:biped/living/hold_greatgsword",
+      "kneel": "epicfight:biped/living/hold_greatsword",
       "walk": "epicfight:biped/living/walk_greatsword"
     }
   },

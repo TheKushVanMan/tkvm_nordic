@@ -75,6 +75,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> HAUBERK_HELMET = ITEMS.register("hauberk_helmet",
             () -> new CustomArmorItem(ModArmorMaterials.HAUBERK, ArmorItem.Type.HELMET, new Item.Properties(),
-                    "spangenhelm", "hauberk"));
+                    "hauberk_helmet", "hauberk_helmet"));
+    public static final RegistryObject<Item> WORN_HAUBERK_HELMET = ITEMS.register("worn_hauberk_helmet",
+            () -> new CustomArmorItem(ModArmorMaterials.HAUBERK, ArmorItem.Type.HELMET, new Item.Properties(),
+                    "worn_hauberk_helmet", "worn_hauberk_helmet"));
 
 }

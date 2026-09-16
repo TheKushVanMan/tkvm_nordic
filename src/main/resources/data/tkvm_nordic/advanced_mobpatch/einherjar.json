@@ -21,22 +21,13 @@
   },
   "default_livingmotions": {
     "idle": "epicfight:biped/living/idle",
-    "walk": "epicfightx:biped/living/walk",
-    "chase": "epicfightx:biped/living/run",
+    "walk": "epicfight:biped/living/walk",
+    "chase": "epicfight:biped/living/run",
     "death": "epicfight:biped/living/death"
   },
   "humanoid_weapon_motions": [
     {
       "weapon_categories": ["axe", "hoe", "pickaxe", "shovel", "sword"],
-      "style":"common",
-      "livingmotions": {
-        "chase": "epicfight:biped/living/run_longsword",
-        "walk": "epicfight:biped/living/walk_longsword",
-        "idle": "epicfight:biped/living/hold_longsword"
-      }
-    },
-    {
-      "weapon_categories": ["longsword", "s_longsword", "s_greatsword", "spear", "s_spear"],
       "style":"common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_greatsword",
@@ -47,9 +38,9 @@
   ],
   "custom_guard_motion": [
     {
-      "weapon_categories": ["longsword","tachi","sword", "s_longsword"],
+      "weapon_categories": ["longsword","tachi","sword", "s_longsword", "axe"],
       "style":"common",
-      "guard": "indestructible:guard/guard_longsword",
+      "guard": "indestructible:guard/guard_spear",
       "stamina_cost_multiply": 1,
       "can_block_projectile" : true
     }
@@ -63,7 +54,7 @@
   },
   "combat_behavior": [
     {
-      "weapon_categories": ["sword"],
+      "weapon_categories": ["sword", "axe"],
       "style": "common",
       "behavior_series": [
         {
