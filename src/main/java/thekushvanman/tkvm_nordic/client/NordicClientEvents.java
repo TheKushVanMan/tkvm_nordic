@@ -6,6 +6,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import thekushvanman.tkvm_nordic.client.model.ModArmorModels;
 import thekushvanman.tkvm_nordic.client.renderer.EinherjarRenderer;
 import thekushvanman.tkvm_nordic.init.ModEntities;
 import thekushvanman.tkvm_nordic.Tkvm_nordic;
@@ -37,5 +38,12 @@ public class NordicClientEvents {
         event.put(ModEntities.DRENGR.get(), DrengrEntity.createAttributes().build());
         event.put(ModEntities.EINHERJAR.get(), DrengrEntity.createAttributes().build());
         event.put(ModEntities.KONUNGR.get(), KonungrEntity.createAttributes().build());
+    }
+
+    @SubscribeEvent
+    public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ModArmorModels.GENERIC_INNER, ModArmorModels::createGenericInnerLayer);
+        event.registerLayerDefinition(ModArmorModels.GENERIC_OUTER, ModArmorModels::createGenericOuterLayer);
+        event.registerLayerDefinition(ModArmorModels.SPANGENHELM, ModArmorModels::createSpangenhelmLayer);
     }
 }

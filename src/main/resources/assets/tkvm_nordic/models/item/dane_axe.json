@@ -614,12 +614,12 @@
 		"thirdperson_righthand": {
 			"rotation": [0, -90, 45],
 			"translation": [0, 7.75, 0],
-			"scale": [2, 2, 2]
+			"scale": [2.5, 2.5, 2.5]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [0, 90, -45],
 			"translation": [0, 7.75, 0],
-			"scale": [2, 2, 2]
+			"scale": [2.5, 2.5, 2.5]
 		},
 		"firstperson_righthand": {
 			"rotation": [0, -90, 45],

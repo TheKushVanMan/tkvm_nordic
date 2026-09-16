@@ -1,6 +1,7 @@
 package thekushvanman.tkvm_nordic.entity;
 
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -10,16 +11,28 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.RegistryObject;
+import thekushvanman.tkvm_nordic.init.ModItems;
 
-/**
- * Drengr - Tier 2 elite unit. Skilled, disciplined warrior (not a berserker).
- * Stronger stats than Kriegsman, no rage/frenzy mechanics.
- */
+
 public class DrengrEntity extends Monster {
+
+
+    private static final RegistryObject<Item>[] WEAPON_POOL = new RegistryObject[] {
+            ModItems.SPEAR,
+            ModItems.DANE_AXE
+    };
+
 
     public DrengrEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+        RegistryObject<Item> weapon = WEAPON_POOL[this.random.nextInt(WEAPON_POOL.length)];
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(weapon.get()));
+        this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(ModItems.HAUBERK.get()));
+        this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ModItems.HAUBERK_LEGGINGS.get()));
     }
 
     public static AttributeSupplier.Builder createAttributes() {

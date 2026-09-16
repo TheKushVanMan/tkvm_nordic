@@ -1,0 +1,43 @@
+{
+  "category": "axe",
+  "swing_sound": "tkvm_weapons:sword_swing",
+  "hit_sound": "tkvm_weapons:slash_light",
+  "hit_particle": "epicfight:hit_blade",
+  "styles": {
+    "cases": [],
+    "default": "two_hand"
+  },
+  "livingmotion_modifier": {
+    "two_hand": {
+      "fall": "epicfight:biped/living/fall",
+      "idle": "epicfight:biped/living/hold_greatsword",
+      "run": "epicfight:biped/living/run_greatsword",
+      "block": "epicfight:biped/skill/guard_spear",
+      "sneak": "epicfight:biped/living/hold_greatsword",
+      "kneel": "epicfight:biped/living/hold_greatgsword",
+      "walk": "epicfight:biped/living/walk_greatsword"
+    }
+  },
+  "combos": {
+    "two_hand": [
+      "epicfight:biped/combat/greatsword_auto1",
+      "epicfight:biped/combat/greatsword_auto2",
+      "epicfight:biped/combat/greatsword_dash",
+      "epicfight:biped/combat/spear_twohand_airslash"
+    ]
+  },
+  "collider": {
+    "size": [
+      0.3,
+      0.5,
+      0.5
+    ],
+    "number": 5,
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ]
+  },
+  "usable_in_offhand": false
+}

@@ -26,8 +26,9 @@ public class EinherjarEntity extends Monster {
 
     public EinherjarEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
-        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.NORSE_LONGSWORD.get()));
-        this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.ROUNDSHIELD.get()));
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.BEARDED_AXE.get()));
+        this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(ModItems.WORN_HAUBERK.get()));
+        this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ModItems.WORN_HAUBERK_LEGGINGS.get()));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -47,7 +48,4 @@ public class EinherjarEntity extends Monster {
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
-
-    // TODO: override customServerAiStep() or add a custom Goal to implement
-    // the "alert"/horn mechanic that buffs or summons nearby Kriegsman/Drengr.
 }

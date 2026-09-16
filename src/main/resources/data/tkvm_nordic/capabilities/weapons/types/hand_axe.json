@@ -1,0 +1,87 @@
+{
+  "category": "axe",
+  "swing_sound": "tkvm_weapons:sword_swing",
+  "hit_sound": "tkvm_weapons:slash_light",
+  "hit_particle": "epicfight:hit_blade",
+  "livingmotion_modifier": {
+    "one_hand": {
+      "fall": "epicfight:biped/living/fall",
+      "idle": "epicfight:biped/living/idle",
+      "run": "epicfight:biped/living/run",
+      "block": "epicfight:biped/skill/guard_longsword",
+      "sneak": "epicfight:biped/living/hold_longsword",
+      "kneel": "epicfight:biped/living/hold_longsword",
+      "walk": "epicfight:biped/living/walk_longsword"
+    },
+    "two_hand": {
+      "idle": "epicfight:biped/living/hold_dual",
+      "run": "epicfight:biped/living/run_dual",
+      "block": "epicfight:biped/skill/guard_dualsword",
+      "walk": "epicfight:biped/living/walk"
+    }
+  },
+  "combos": {
+    "one_hand": [
+      "epicfight:biped/combat/sword_auto1",
+      "epicfight:biped/combat/sword_auto2",
+      "epicfight:biped/combat/sword_auto3",
+      "epicfight:biped/combat/sword_auto4",
+      "epicfight:biped/combat/sword_dash",
+      "epicfight:biped/combat/sword_airslash"
+    ],
+    "two_hand": [
+      "epicfight:biped/combat/sword_dual_auto1",
+      "epicfight:biped/combat/sword_dual_auto2",
+      "epicfight:biped/combat/sword_dual_auto3",
+      "epicfight:biped/combat/sword_dual_dash",
+      "epicfight:biped/combat/sword_dual_airslash"
+    ]
+  },
+  "offhand_item_compatible_predicate": [
+    {
+      "predicate": "epicfight:offhand_item_category",
+      "category": "axe"
+    }
+  ],
+  "styles": {
+    "default": "one_hand",
+    "cases": [
+      {
+        "conditions": [
+          {
+            "predicate": "epicfight:offhand_item_category",
+            "category": "not_weapon"
+          }
+        ],
+        "style": "one_hand"
+      },
+      {
+        "conditions": [
+          {
+            "predicate": "epicfight:offhand_item_category",
+            "category": "axe"
+          }
+        ],
+        "style": "two_hand"
+      }
+    ]
+  },
+  "innate_skills": {
+    "one_hand": "epicfight:the_guillotine",
+    "two_hand": "epicfight:the_guillotine"
+  },
+  "collider": {
+    "size": [
+      0.3,
+      0.5,
+      0.5
+    ],
+    "number": 5,
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ]
+  },
+  "usable_in_offhand": true
+}

@@ -9,6 +9,10 @@ import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import net.minecraft.world.item.ArmorItem;
+import thekushvanman.tkvm_nordic.items.CustomArmorItem;
+
 import thekushvanman.tkvm_nordic.Tkvm_nordic;
 
 public class ModItems {
@@ -44,5 +48,33 @@ public class ModItems {
 
     public static final RegistryObject<Item> ROUNDSHIELD = ITEMS.register("roundshield",
             () -> new ShieldItem(new Item.Properties().durability(336)));
+
+    public static final RegistryObject<Item> HAUBERK = ITEMS.register("hauberk",
+            () -> new CustomArmorItem(ModArmorMaterials.HAUBERK, ArmorItem.Type.CHESTPLATE, new Item.Properties(),
+                    "generic_outer", "hauberk"));
+
+    public static final RegistryObject<Item> HAUBERK_LEGGINGS = ITEMS.register("hauberk_leggings",
+            () -> new CustomArmorItem(ModArmorMaterials.HAUBERK, ArmorItem.Type.LEGGINGS, new Item.Properties(),
+                    "generic_inner", "hauberk"));
+
+    public static final RegistryObject<Item> WORN_HAUBERK = ITEMS.register("worn_hauberk",
+            () -> new CustomArmorItem(ModArmorMaterials.WORN_HAUBERK, ArmorItem.Type.CHESTPLATE, new Item.Properties(),
+                    "generic_outer", "worn_hauberk"));
+
+    public static final RegistryObject<Item> WORN_HAUBERK_LEGGINGS = ITEMS.register("worn_hauberk_leggings",
+            () -> new CustomArmorItem(ModArmorMaterials.WORN_HAUBERK, ArmorItem.Type.LEGGINGS, new Item.Properties(),
+                    "generic_inner", "worn_hauberk"));
+
+    public static final RegistryObject<Item> GALLOWGLASS_GAMBESON = ITEMS.register("gallowglass_gambeson",
+            () -> new CustomArmorItem(ModArmorMaterials.GALLOWGLASS, ArmorItem.Type.CHESTPLATE, new Item.Properties(),
+                    "generic_outer", "gallowglass"));
+
+    public static final RegistryObject<Item> GALLOWGLASS_LEGGINGS = ITEMS.register("gallowglass_leggings",
+            () -> new CustomArmorItem(ModArmorMaterials.GALLOWGLASS, ArmorItem.Type.LEGGINGS, new Item.Properties(),
+                    "generic_inner", "gallowglass"));
+
+    public static final RegistryObject<Item> HAUBERK_HELMET = ITEMS.register("hauberk_helmet",
+            () -> new CustomArmorItem(ModArmorMaterials.HAUBERK, ArmorItem.Type.HELMET, new Item.Properties(),
+                    "spangenhelm", "hauberk"));
 
 }

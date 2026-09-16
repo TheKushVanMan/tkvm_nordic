@@ -1,6 +1,7 @@
 package thekushvanman.tkvm_nordic.entity;
 
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -10,17 +11,16 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import thekushvanman.tkvm_nordic.init.ModItems;
 
-/**
- * Heimdall - Tier 3 boss unit. A human who has earned a god's name as a title.
- * Watchman/vanguard archetype: high detection range, alerts nearby units.
- * Extend with a custom "alert" ability (buff/summon nearby mobs) as a next step.
- */
 public class KonungrEntity extends Monster {
 
     public KonungrEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.HAND_AXE.get()));
+        this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.HAND_AXE.get()));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -41,6 +41,4 @@ public class KonungrEntity extends Monster {
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
     }
 
-    // TODO: override customServerAiStep() or add a custom Goal to implement
-    // the "alert"/horn mechanic that buffs or summons nearby Kriegsman/Drengr.
 }

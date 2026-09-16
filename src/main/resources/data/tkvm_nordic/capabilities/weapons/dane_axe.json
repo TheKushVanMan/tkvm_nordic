@@ -1,0 +1,25 @@
+{
+  "attributes": {
+    "common": {
+      "armor_negation": 0,
+      "impact": 1,
+      "max_strikes": 3,
+      "damage_bonus": 0.0,
+      "speed_bonus": 0.0
+    }
+  },
+  "collider": {
+    "number": 5,
+    "size": [
+      0.3,
+      0.4,
+      1.2
+    ],
+    "center": [
+      0.0,
+      0.02,
+      -0.75
+    ]
+  },
+  "type": "tkvm_nordic:dane_axe"
+}

@@ -10,8 +10,8 @@
   "livingmotion_modifier": {
     "one_hand": {
       "fall": "epicfight:biped/living/fall",
-      "idle": "epicfight:biped/living/hold_longsword",
-      "run": "epicfight:biped/living/run_longsword",
+      "idle": "epicfight:biped/living/idle",
+      "run": "epicfight:biped/living/run",
       "block": "epicfight:biped/skill/guard_longsword",
       "sneak": "epicfight:biped/living/hold_longsword",
       "kneel": "epicfight:biped/living/hold_longsword",
@@ -20,11 +20,12 @@
   },
   "combos": {
     "one_hand": [
-      "epicfight:biped/combat/longsword_auto1",
-      "epicfight:biped/combat/longsword_auto2",
-      "epicfight:biped/combat/longsword_auto3",
-      "epicfight:biped/combat/longsword_dash",
-      "epicfight:biped/combat/longsword_airslash"
+      "epicfight:biped/combat/sword_auto1",
+      "epicfight:biped/combat/sword_auto2",
+      "epicfight:biped/combat/sword_auto3",
+      "epicfight:biped/combat/sword_auto4",
+      "epicfight:biped/combat/sword_dash",
+      "epicfight:biped/combat/sword_airslash"
     ]
   },
   "collider": {
