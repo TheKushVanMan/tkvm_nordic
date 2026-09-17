@@ -2,19 +2,656 @@
   "konungr_theme_intro": {
     "category": "music",
     "sounds": [
-      {
-        "name": "tkvm_nordic:konungr_theme_intro",
-        "stream": true
-      }
+      {"name": "tkvm_nordic:konungr_theme_intro", "stream": true}
     ]
   },
   "konungr_theme": {
     "category": "music",
     "sounds": [
-      {
-        "name": "tkvm_nordic:konungr_theme",
-        "stream": true
-      }
+      {"name": "tkvm_nordic:konungr_theme", "stream": true}
+    ]
+  },
+  "viking_all_clear": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_all_clear_01"},
+      {"name": "tkvm_nordic:viking_all_clear_02"},
+      {"name": "tkvm_nordic:viking_all_clear_03"},
+      {"name": "tkvm_nordic:viking_all_clear_04"},
+      {"name": "tkvm_nordic:viking_all_clear_05"},
+      {"name": "tkvm_nordic:viking_all_clear_06"},
+      {"name": "tkvm_nordic:viking_all_clear_07"},
+      {"name": "tkvm_nordic:viking_all_clear_08"},
+      {"name": "tkvm_nordic:viking_all_clear_09"}
+    ]
+  },
+  "viking_battlecry_standing": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_battlecry_standing_01"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_02"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_03"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_04"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_05"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_06"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_07"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_08"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_09"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_10"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_11"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_12"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_13"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_14"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_15"},
+      {"name": "tkvm_nordic:viking_battlecry_standing_16"}
+    ]
+  },
+  "viking_behind_us": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_behind_us_01"},
+      {"name": "tkvm_nordic:viking_behind_us_02"},
+      {"name": "tkvm_nordic:viking_behind_us_03"},
+      {"name": "tkvm_nordic:viking_behind_us_04"},
+      {"name": "tkvm_nordic:viking_behind_us_05"},
+      {"name": "tkvm_nordic:viking_behind_us_06"},
+      {"name": "tkvm_nordic:viking_behind_us_07"},
+      {"name": "tkvm_nordic:viking_behind_us_08"},
+      {"name": "tkvm_nordic:viking_behind_us_09"}
+    ]
+  },
+  "viking_death": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_death_01"},
+      {"name": "tkvm_nordic:viking_death_02"},
+      {"name": "tkvm_nordic:viking_death_03"},
+      {"name": "tkvm_nordic:viking_death_04"},
+      {"name": "tkvm_nordic:viking_death_05"},
+      {"name": "tkvm_nordic:viking_death_06"},
+      {"name": "tkvm_nordic:viking_death_07"},
+      {"name": "tkvm_nordic:viking_death_08"},
+      {"name": "tkvm_nordic:viking_death_09"},
+      {"name": "tkvm_nordic:viking_death_10"},
+      {"name": "tkvm_nordic:viking_death_11"},
+      {"name": "tkvm_nordic:viking_death_12"},
+      {"name": "tkvm_nordic:viking_death_13"},
+      {"name": "tkvm_nordic:viking_death_14"},
+      {"name": "tkvm_nordic:viking_death_15"},
+      {"name": "tkvm_nordic:viking_death_16"},
+      {"name": "tkvm_nordic:viking_death_17"},
+      {"name": "tkvm_nordic:viking_death_18"},
+      {"name": "tkvm_nordic:viking_death_19"},
+      {"name": "tkvm_nordic:viking_death_20"},
+      {"name": "tkvm_nordic:viking_death_21"},
+      {"name": "tkvm_nordic:viking_death_22"},
+      {"name": "tkvm_nordic:viking_death_23"},
+      {"name": "tkvm_nordic:viking_death_24"},
+      {"name": "tkvm_nordic:viking_death_25"},
+      {"name": "tkvm_nordic:viking_death_26"},
+      {"name": "tkvm_nordic:viking_death_27"},
+      {"name": "tkvm_nordic:viking_death_28"},
+      {"name": "tkvm_nordic:viking_death_29"}
+    ]
+  },
+  "viking_defend_me": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_defend_me_01"},
+      {"name": "tkvm_nordic:viking_defend_me_02"},
+      {"name": "tkvm_nordic:viking_defend_me_03"},
+      {"name": "tkvm_nordic:viking_defend_me_04"},
+      {"name": "tkvm_nordic:viking_defend_me_05"},
+      {"name": "tkvm_nordic:viking_defend_me_06"},
+      {"name": "tkvm_nordic:viking_defend_me_07"},
+      {"name": "tkvm_nordic:viking_defend_me_08"},
+      {"name": "tkvm_nordic:viking_defend_me_09"},
+      {"name": "tkvm_nordic:viking_defend_me_10"}
+    ]
+  },
+  "viking_falling_fire": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_falling_fire_01"},
+      {"name": "tkvm_nordic:viking_falling_fire_02"},
+      {"name": "tkvm_nordic:viking_falling_fire_03"},
+      {"name": "tkvm_nordic:viking_falling_fire_04"},
+      {"name": "tkvm_nordic:viking_falling_fire_05"}
+    ]
+  },
+  "viking_fatigue_gasp": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_fatigue_gasp_01"},
+      {"name": "tkvm_nordic:viking_fatigue_gasp_02"},
+      {"name": "tkvm_nordic:viking_fatigue_gasp_03"},
+      {"name": "tkvm_nordic:viking_fatigue_gasp_04"},
+      {"name": "tkvm_nordic:viking_fatigue_gasp_05"},
+      {"name": "tkvm_nordic:viking_fatigue_gasp_06"},
+      {"name": "tkvm_nordic:viking_fatigue_gasp_07"},
+      {"name": "tkvm_nordic:viking_fatigue_gasp_08"}
+    ]
+  },
+  "viking_fatigue_grunt": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_fatigue_grunt_01"},
+      {"name": "tkvm_nordic:viking_fatigue_grunt_02"},
+      {"name": "tkvm_nordic:viking_fatigue_grunt_03"},
+      {"name": "tkvm_nordic:viking_fatigue_grunt_04"},
+      {"name": "tkvm_nordic:viking_fatigue_grunt_05"},
+      {"name": "tkvm_nordic:viking_fatigue_grunt_06"},
+      {"name": "tkvm_nordic:viking_fatigue_grunt_07"}
+    ]
+  },
+  "viking_fire": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_fire_01"},
+      {"name": "tkvm_nordic:viking_fire_02"},
+      {"name": "tkvm_nordic:viking_fire_03"}
+    ]
+  },
+  "viking_follow_me": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_follow_me_01"},
+      {"name": "tkvm_nordic:viking_follow_me_03"},
+      {"name": "tkvm_nordic:viking_follow_me_04"},
+      {"name": "tkvm_nordic:viking_follow_me_05"},
+      {"name": "tkvm_nordic:viking_follow_me_06"},
+      {"name": "tkvm_nordic:viking_follow_me_07"},
+      {"name": "tkvm_nordic:viking_follow_me_08"},
+      {"name": "tkvm_nordic:viking_follow_me_09"},
+      {"name": "tkvm_nordic:viking_follow_me_10"},
+      {"name": "tkvm_nordic:viking_follow_me_11"},
+      {"name": "tkvm_nordic:viking_follow_me_12"},
+      {"name": "tkvm_nordic:viking_follow_me_13"},
+      {"name": "tkvm_nordic:viking_follow_me_14"}
+    ]
+  },
+  "viking_forward": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_forward_01"},
+      {"name": "tkvm_nordic:viking_forward_02"},
+      {"name": "tkvm_nordic:viking_forward_03"},
+      {"name": "tkvm_nordic:viking_forward_04"},
+      {"name": "tkvm_nordic:viking_forward_05"},
+      {"name": "tkvm_nordic:viking_forward_06"},
+      {"name": "tkvm_nordic:viking_forward_07"},
+      {"name": "tkvm_nordic:viking_forward_08"},
+      {"name": "tkvm_nordic:viking_forward_09"},
+      {"name": "tkvm_nordic:viking_forward_10"},
+      {"name": "tkvm_nordic:viking_forward_11"},
+      {"name": "tkvm_nordic:viking_forward_12"}
+    ]
+  },
+  "viking_got_ur_back": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_got_ur_back_01"},
+      {"name": "tkvm_nordic:viking_got_ur_back_02"},
+      {"name": "tkvm_nordic:viking_got_ur_back_03"},
+      {"name": "tkvm_nordic:viking_got_ur_back_04"},
+      {"name": "tkvm_nordic:viking_got_ur_back_05"},
+      {"name": "tkvm_nordic:viking_got_ur_back_06"},
+      {"name": "tkvm_nordic:viking_got_ur_back_07"},
+      {"name": "tkvm_nordic:viking_got_ur_back_08"},
+      {"name": "tkvm_nordic:viking_got_ur_back_09"},
+      {"name": "tkvm_nordic:viking_got_ur_back_10"},
+      {"name": "tkvm_nordic:viking_got_ur_back_11"},
+      {"name": "tkvm_nordic:viking_got_ur_back_12"},
+      {"name": "tkvm_nordic:viking_got_ur_back_13"},
+      {"name": "tkvm_nordic:viking_got_ur_back_14"},
+      {"name": "tkvm_nordic:viking_got_ur_back_15"},
+      {"name": "tkvm_nordic:viking_got_ur_back_16"},
+      {"name": "tkvm_nordic:viking_got_ur_back_17"},
+      {"name": "tkvm_nordic:viking_got_ur_back_18"},
+      {"name": "tkvm_nordic:viking_got_ur_back_19"},
+      {"name": "tkvm_nordic:viking_got_ur_back_20"}
+    ]
+  },
+  "viking_help": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_help_01"},
+      {"name": "tkvm_nordic:viking_help_02"},
+      {"name": "tkvm_nordic:viking_help_03"},
+      {"name": "tkvm_nordic:viking_help_04"},
+      {"name": "tkvm_nordic:viking_help_05"},
+      {"name": "tkvm_nordic:viking_help_06"},
+      {"name": "tkvm_nordic:viking_help_07"},
+      {"name": "tkvm_nordic:viking_help_08"},
+      {"name": "tkvm_nordic:viking_help_09"},
+      {"name": "tkvm_nordic:viking_help_10"},
+      {"name": "tkvm_nordic:viking_help_11"},
+      {"name": "tkvm_nordic:viking_help_12"},
+      {"name": "tkvm_nordic:viking_help_13"},
+      {"name": "tkvm_nordic:viking_help_14"}
+    ]
+  },
+  "viking_high_pain": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_high_pain_01"},
+      {"name": "tkvm_nordic:viking_high_pain_02"},
+      {"name": "tkvm_nordic:viking_high_pain_03"},
+      {"name": "tkvm_nordic:viking_high_pain_04"},
+      {"name": "tkvm_nordic:viking_high_pain_05"},
+      {"name": "tkvm_nordic:viking_high_pain_06"},
+      {"name": "tkvm_nordic:viking_high_pain_07"},
+      {"name": "tkvm_nordic:viking_high_pain_08"},
+      {"name": "tkvm_nordic:viking_high_pain_09"},
+      {"name": "tkvm_nordic:viking_high_pain_10"},
+      {"name": "tkvm_nordic:viking_high_pain_11"},
+      {"name": "tkvm_nordic:viking_high_pain_12"},
+      {"name": "tkvm_nordic:viking_high_pain_13"},
+      {"name": "tkvm_nordic:viking_high_pain_14"},
+      {"name": "tkvm_nordic:viking_high_pain_15"},
+      {"name": "tkvm_nordic:viking_high_pain_16"},
+      {"name": "tkvm_nordic:viking_high_pain_17"},
+      {"name": "tkvm_nordic:viking_high_pain_18"},
+      {"name": "tkvm_nordic:viking_high_pain_19"},
+      {"name": "tkvm_nordic:viking_high_pain_20"},
+      {"name": "tkvm_nordic:viking_high_pain_21"}
+    ]
+  },
+  "viking_hold_ur_ground": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_hold_ur_ground_01"},
+      {"name": "tkvm_nordic:viking_hold_ur_ground_02"},
+      {"name": "tkvm_nordic:viking_hold_ur_ground_03"},
+      {"name": "tkvm_nordic:viking_hold_ur_ground_04"},
+      {"name": "tkvm_nordic:viking_hold_ur_ground_05"},
+      {"name": "tkvm_nordic:viking_hold_ur_ground_06"},
+      {"name": "tkvm_nordic:viking_hold_ur_ground_07"},
+      {"name": "tkvm_nordic:viking_hold_ur_ground_08"},
+      {"name": "tkvm_nordic:viking_hold_ur_ground_09"}
+    ]
+  },
+  "viking_incoming": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_incoming_01"},
+      {"name": "tkvm_nordic:viking_incoming_02"},
+      {"name": "tkvm_nordic:viking_incoming_03"},
+      {"name": "tkvm_nordic:viking_incoming_04"},
+      {"name": "tkvm_nordic:viking_incoming_05"},
+      {"name": "tkvm_nordic:viking_incoming_06"},
+      {"name": "tkvm_nordic:viking_incoming_07"},
+      {"name": "tkvm_nordic:viking_incoming_08"},
+      {"name": "tkvm_nordic:viking_incoming_09"},
+      {"name": "tkvm_nordic:viking_incoming_10"}
+    ]
+  },
+  "viking_laugh": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_laugh_01"},
+      {"name": "tkvm_nordic:viking_laugh_02"},
+      {"name": "tkvm_nordic:viking_laugh_03"},
+      {"name": "tkvm_nordic:viking_laugh_04"},
+      {"name": "tkvm_nordic:viking_laugh_05"},
+      {"name": "tkvm_nordic:viking_laugh_06"},
+      {"name": "tkvm_nordic:viking_laugh_07"},
+      {"name": "tkvm_nordic:viking_laugh_08"},
+      {"name": "tkvm_nordic:viking_laugh_09"},
+      {"name": "tkvm_nordic:viking_laugh_10"},
+      {"name": "tkvm_nordic:viking_laugh_11"},
+      {"name": "tkvm_nordic:viking_laugh_12"},
+      {"name": "tkvm_nordic:viking_laugh_13"}
+    ]
+  },
+  "viking_low_pain": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_low_pain_01"},
+      {"name": "tkvm_nordic:viking_low_pain_02"},
+      {"name": "tkvm_nordic:viking_low_pain_03"},
+      {"name": "tkvm_nordic:viking_low_pain_04"},
+      {"name": "tkvm_nordic:viking_low_pain_05"},
+      {"name": "tkvm_nordic:viking_low_pain_06"},
+      {"name": "tkvm_nordic:viking_low_pain_07"},
+      {"name": "tkvm_nordic:viking_low_pain_08"},
+      {"name": "tkvm_nordic:viking_low_pain_09"},
+      {"name": "tkvm_nordic:viking_low_pain_10"},
+      {"name": "tkvm_nordic:viking_low_pain_11"},
+      {"name": "tkvm_nordic:viking_low_pain_12"},
+      {"name": "tkvm_nordic:viking_low_pain_13"},
+      {"name": "tkvm_nordic:viking_low_pain_14"},
+      {"name": "tkvm_nordic:viking_low_pain_15"},
+      {"name": "tkvm_nordic:viking_low_pain_16"},
+      {"name": "tkvm_nordic:viking_low_pain_17"},
+      {"name": "tkvm_nordic:viking_low_pain_18"},
+      {"name": "tkvm_nordic:viking_low_pain_19"},
+      {"name": "tkvm_nordic:viking_low_pain_20"},
+      {"name": "tkvm_nordic:viking_low_pain_21"},
+      {"name": "tkvm_nordic:viking_low_pain_22"},
+      {"name": "tkvm_nordic:viking_low_pain_23"},
+      {"name": "tkvm_nordic:viking_low_pain_24"},
+      {"name": "tkvm_nordic:viking_low_pain_25"},
+      {"name": "tkvm_nordic:viking_low_pain_26"},
+      {"name": "tkvm_nordic:viking_low_pain_27"},
+      {"name": "tkvm_nordic:viking_low_pain_28"},
+      {"name": "tkvm_nordic:viking_low_pain_29"},
+      {"name": "tkvm_nordic:viking_low_pain_30"},
+      {"name": "tkvm_nordic:viking_low_pain_31"}
+    ]
+  },
+  "viking_medium_pain": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_medium_pain_01"},
+      {"name": "tkvm_nordic:viking_medium_pain_02"},
+      {"name": "tkvm_nordic:viking_medium_pain_03"},
+      {"name": "tkvm_nordic:viking_medium_pain_04"},
+      {"name": "tkvm_nordic:viking_medium_pain_05"},
+      {"name": "tkvm_nordic:viking_medium_pain_06"},
+      {"name": "tkvm_nordic:viking_medium_pain_07"},
+      {"name": "tkvm_nordic:viking_medium_pain_08"},
+      {"name": "tkvm_nordic:viking_medium_pain_09"},
+      {"name": "tkvm_nordic:viking_medium_pain_10"},
+      {"name": "tkvm_nordic:viking_medium_pain_11"},
+      {"name": "tkvm_nordic:viking_medium_pain_12"},
+      {"name": "tkvm_nordic:viking_medium_pain_13"},
+      {"name": "tkvm_nordic:viking_medium_pain_14"},
+      {"name": "tkvm_nordic:viking_medium_pain_15"},
+      {"name": "tkvm_nordic:viking_medium_pain_16"},
+      {"name": "tkvm_nordic:viking_medium_pain_17"},
+      {"name": "tkvm_nordic:viking_medium_pain_18"},
+      {"name": "tkvm_nordic:viking_medium_pain_19"},
+      {"name": "tkvm_nordic:viking_medium_pain_20"},
+      {"name": "tkvm_nordic:viking_medium_pain_21"},
+      {"name": "tkvm_nordic:viking_medium_pain_22"},
+      {"name": "tkvm_nordic:viking_medium_pain_23"},
+      {"name": "tkvm_nordic:viking_medium_pain_24"},
+      {"name": "tkvm_nordic:viking_medium_pain_25"},
+      {"name": "tkvm_nordic:viking_medium_pain_26"},
+      {"name": "tkvm_nordic:viking_medium_pain_27"},
+      {"name": "tkvm_nordic:viking_medium_pain_28"}
+    ]
+  },
+  "viking_no": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_no_01"},
+      {"name": "tkvm_nordic:viking_no_02"},
+      {"name": "tkvm_nordic:viking_no_03"},
+      {"name": "tkvm_nordic:viking_no_04"},
+      {"name": "tkvm_nordic:viking_no_05"},
+      {"name": "tkvm_nordic:viking_no_06"},
+      {"name": "tkvm_nordic:viking_no_07"},
+      {"name": "tkvm_nordic:viking_no_08"},
+      {"name": "tkvm_nordic:viking_no_09"},
+      {"name": "tkvm_nordic:viking_no_10"},
+      {"name": "tkvm_nordic:viking_no_11"},
+      {"name": "tkvm_nordic:viking_no_12"},
+      {"name": "tkvm_nordic:viking_no_13"},
+      {"name": "tkvm_nordic:viking_no_14"},
+      {"name": "tkvm_nordic:viking_no_15"},
+      {"name": "tkvm_nordic:viking_no_16"},
+      {"name": "tkvm_nordic:viking_no_17"},
+      {"name": "tkvm_nordic:viking_no_18"},
+      {"name": "tkvm_nordic:viking_no_19"},
+      {"name": "tkvm_nordic:viking_no_20"},
+      {"name": "tkvm_nordic:viking_no_21"},
+      {"name": "tkvm_nordic:viking_no_22"},
+      {"name": "tkvm_nordic:viking_no_23"},
+      {"name": "tkvm_nordic:viking_no_24"},
+      {"name": "tkvm_nordic:viking_no_25"},
+      {"name": "tkvm_nordic:viking_no_26"},
+      {"name": "tkvm_nordic:viking_no_27"},
+      {"name": "tkvm_nordic:viking_no_28"},
+      {"name": "tkvm_nordic:viking_no_29"},
+      {"name": "tkvm_nordic:viking_no_30"},
+      {"name": "tkvm_nordic:viking_no_31"},
+      {"name": "tkvm_nordic:viking_no_32"},
+      {"name": "tkvm_nordic:viking_no_33"},
+      {"name": "tkvm_nordic:viking_no_34"},
+      {"name": "tkvm_nordic:viking_no_35"},
+      {"name": "tkvm_nordic:viking_no_36"}
+    ]
+  },
+  "viking_rangers": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_rangers_01"},
+      {"name": "tkvm_nordic:viking_rangers_02"},
+      {"name": "tkvm_nordic:viking_rangers_03"},
+      {"name": "tkvm_nordic:viking_rangers_04"},
+      {"name": "tkvm_nordic:viking_rangers_05"},
+      {"name": "tkvm_nordic:viking_rangers_06"},
+      {"name": "tkvm_nordic:viking_rangers_07"},
+      {"name": "tkvm_nordic:viking_rangers_08"},
+      {"name": "tkvm_nordic:viking_rangers_09"},
+      {"name": "tkvm_nordic:viking_rangers_10"},
+      {"name": "tkvm_nordic:viking_rangers_11"}
+    ]
+  },
+  "viking_respect": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_respect_01"},
+      {"name": "tkvm_nordic:viking_respect_02"},
+      {"name": "tkvm_nordic:viking_respect_03"},
+      {"name": "tkvm_nordic:viking_respect_04"},
+      {"name": "tkvm_nordic:viking_respect_05"},
+      {"name": "tkvm_nordic:viking_respect_06"},
+      {"name": "tkvm_nordic:viking_respect_07"},
+      {"name": "tkvm_nordic:viking_respect_08"},
+      {"name": "tkvm_nordic:viking_respect_09"},
+      {"name": "tkvm_nordic:viking_respect_10"}
+    ]
+  },
+  "viking_retreat": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_retreat_01"},
+      {"name": "tkvm_nordic:viking_retreat_02"},
+      {"name": "tkvm_nordic:viking_retreat_03"},
+      {"name": "tkvm_nordic:viking_retreat_04"},
+      {"name": "tkvm_nordic:viking_retreat_05"},
+      {"name": "tkvm_nordic:viking_retreat_06"}
+    ]
+  },
+  "viking_running_battlecry": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_running_battlecry_01"},
+      {"name": "tkvm_nordic:viking_running_battlecry_02"},
+      {"name": "tkvm_nordic:viking_running_battlecry_03"},
+      {"name": "tkvm_nordic:viking_running_battlecry_04"},
+      {"name": "tkvm_nordic:viking_running_battlecry_05"},
+      {"name": "tkvm_nordic:viking_running_battlecry_06"},
+      {"name": "tkvm_nordic:viking_running_battlecry_07"},
+      {"name": "tkvm_nordic:viking_running_battlecry_08"},
+      {"name": "tkvm_nordic:viking_running_battlecry_09"},
+      {"name": "tkvm_nordic:viking_running_battlecry_10"},
+      {"name": "tkvm_nordic:viking_running_battlecry_11"},
+      {"name": "tkvm_nordic:viking_running_battlecry_12"},
+      {"name": "tkvm_nordic:viking_running_battlecry_13"},
+      {"name": "tkvm_nordic:viking_running_battlecry_14"},
+      {"name": "tkvm_nordic:viking_running_battlecry_15"},
+      {"name": "tkvm_nordic:viking_running_battlecry_16"}
+    ]
+  },
+  "viking_sorry": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_sorry_01"},
+      {"name": "tkvm_nordic:viking_sorry_02"},
+      {"name": "tkvm_nordic:viking_sorry_03"},
+      {"name": "tkvm_nordic:viking_sorry_04"},
+      {"name": "tkvm_nordic:viking_sorry_05"},
+      {"name": "tkvm_nordic:viking_sorry_06"},
+      {"name": "tkvm_nordic:viking_sorry_07"},
+      {"name": "tkvm_nordic:viking_sorry_08"},
+      {"name": "tkvm_nordic:viking_sorry_09"},
+      {"name": "tkvm_nordic:viking_sorry_10"},
+      {"name": "tkvm_nordic:viking_sorry_11"},
+      {"name": "tkvm_nordic:viking_sorry_12"},
+      {"name": "tkvm_nordic:viking_sorry_13"},
+      {"name": "tkvm_nordic:viking_sorry_14"},
+      {"name": "tkvm_nordic:viking_sorry_15"},
+      {"name": "tkvm_nordic:viking_sorry_16"},
+      {"name": "tkvm_nordic:viking_sorry_17"},
+      {"name": "tkvm_nordic:viking_sorry_18"},
+      {"name": "tkvm_nordic:viking_sorry_19"},
+      {"name": "tkvm_nordic:viking_sorry_20"}
+    ]
+  },
+  "viking_taunt": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_taunt_01"},
+      {"name": "tkvm_nordic:viking_taunt_02"},
+      {"name": "tkvm_nordic:viking_taunt_03"},
+      {"name": "tkvm_nordic:viking_taunt_04"},
+      {"name": "tkvm_nordic:viking_taunt_05"},
+      {"name": "tkvm_nordic:viking_taunt_06"},
+      {"name": "tkvm_nordic:viking_taunt_07"},
+      {"name": "tkvm_nordic:viking_taunt_08"},
+      {"name": "tkvm_nordic:viking_taunt_09"},
+      {"name": "tkvm_nordic:viking_taunt_10"}
+    ]
+  },
+  "viking_thanks": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_thanks_01"},
+      {"name": "tkvm_nordic:viking_thanks_02"},
+      {"name": "tkvm_nordic:viking_thanks_03"},
+      {"name": "tkvm_nordic:viking_thanks_04"},
+      {"name": "tkvm_nordic:viking_thanks_05"},
+      {"name": "tkvm_nordic:viking_thanks_06"},
+      {"name": "tkvm_nordic:viking_thanks_07"},
+      {"name": "tkvm_nordic:viking_thanks_08"},
+      {"name": "tkvm_nordic:viking_thanks_09"},
+      {"name": "tkvm_nordic:viking_thanks_10"},
+      {"name": "tkvm_nordic:viking_thanks_11"},
+      {"name": "tkvm_nordic:viking_thanks_12"},
+      {"name": "tkvm_nordic:viking_thanks_13"},
+      {"name": "tkvm_nordic:viking_thanks_14"},
+      {"name": "tkvm_nordic:viking_thanks_15"},
+      {"name": "tkvm_nordic:viking_thanks_16"},
+      {"name": "tkvm_nordic:viking_thanks_17"},
+      {"name": "tkvm_nordic:viking_thanks_18"},
+      {"name": "tkvm_nordic:viking_thanks_19"},
+      {"name": "tkvm_nordic:viking_thanks_20"},
+      {"name": "tkvm_nordic:viking_thanks_21"}
+    ]
+  },
+  "viking_grunt_t1": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_tier1_grunt_01"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_02"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_03"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_04"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_05"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_06"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_07"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_08"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_09"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_10"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_11"},
+      {"name": "tkvm_nordic:viking_tier1_grunt_12"}
+    ]
+  },
+  "viking_grunt_t2": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_tier2_grunt_01"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_02"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_03"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_04"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_05"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_06"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_07"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_08"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_09"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_10"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_11"},
+      {"name": "tkvm_nordic:viking_tier2_grunt_12"}
+    ]
+  },
+  "viking_grunt_t3": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_tier3_grunt_01"},
+      {"name": "tkvm_nordic:viking_tier3_grunt_02"},
+      {"name": "tkvm_nordic:viking_tier3_grunt_03"},
+      {"name": "tkvm_nordic:viking_tier3_grunt_04"},
+      {"name": "tkvm_nordic:viking_tier3_grunt_05"},
+      {"name": "tkvm_nordic:viking_tier3_grunt_06"},
+      {"name": "tkvm_nordic:viking_tier3_grunt_07"},
+      {"name": "tkvm_nordic:viking_tier3_grunt_08"}
+    ]
+  },
+  "viking_welcome": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_welcome_01"},
+      {"name": "tkvm_nordic:viking_welcome_02"},
+      {"name": "tkvm_nordic:viking_welcome_03"},
+      {"name": "tkvm_nordic:viking_welcome_04"},
+      {"name": "tkvm_nordic:viking_welcome_05"},
+      {"name": "tkvm_nordic:viking_welcome_06"},
+      {"name": "tkvm_nordic:viking_welcome_07"},
+      {"name": "tkvm_nordic:viking_welcome_08"},
+      {"name": "tkvm_nordic:viking_welcome_09"},
+      {"name": "tkvm_nordic:viking_welcome_10"},
+      {"name": "tkvm_nordic:viking_welcome_11"},
+      {"name": "tkvm_nordic:viking_welcome_12"},
+      {"name": "tkvm_nordic:viking_welcome_13"},
+      {"name": "tkvm_nordic:viking_welcome_14"},
+      {"name": "tkvm_nordic:viking_welcome_15"},
+      {"name": "tkvm_nordic:viking_welcome_16"},
+      {"name": "tkvm_nordic:viking_welcome_17"},
+      {"name": "tkvm_nordic:viking_welcome_18"},
+      {"name": "tkvm_nordic:viking_welcome_19"},
+      {"name": "tkvm_nordic:viking_welcome_20"},
+      {"name": "tkvm_nordic:viking_welcome_21"},
+      {"name": "tkvm_nordic:viking_welcome_22"}
+    ]
+  },
+  "viking_yes": {
+    "category": "hostile",
+    "sounds": [
+      {"name": "tkvm_nordic:viking_yes_01"},
+      {"name": "tkvm_nordic:viking_yes_02"},
+      {"name": "tkvm_nordic:viking_yes_03"},
+      {"name": "tkvm_nordic:viking_yes_04"},
+      {"name": "tkvm_nordic:viking_yes_05"},
+      {"name": "tkvm_nordic:viking_yes_06"},
+      {"name": "tkvm_nordic:viking_yes_07"},
+      {"name": "tkvm_nordic:viking_yes_08"},
+      {"name": "tkvm_nordic:viking_yes_09"},
+      {"name": "tkvm_nordic:viking_yes_10"},
+      {"name": "tkvm_nordic:viking_yes_11"},
+      {"name": "tkvm_nordic:viking_yes_12"},
+      {"name": "tkvm_nordic:viking_yes_13"},
+      {"name": "tkvm_nordic:viking_yes_14"},
+      {"name": "tkvm_nordic:viking_yes_15"},
+      {"name": "tkvm_nordic:viking_yes_16"},
+      {"name": "tkvm_nordic:viking_yes_17"},
+      {"name": "tkvm_nordic:viking_yes_18"},
+      {"name": "tkvm_nordic:viking_yes_19"},
+      {"name": "tkvm_nordic:viking_yes_20"},
+      {"name": "tkvm_nordic:viking_yes_21"},
+      {"name": "tkvm_nordic:viking_yes_22"},
+      {"name": "tkvm_nordic:viking_yes_23"},
+      {"name": "tkvm_nordic:viking_yes_24"},
+      {"name": "tkvm_nordic:viking_yes_25"},
+      {"name": "tkvm_nordic:viking_yes_26"},
+      {"name": "tkvm_nordic:viking_yes_27"},
+      {"name": "tkvm_nordic:viking_yes_28"},
+      {"name": "tkvm_nordic:viking_yes_29"},
+      {"name": "tkvm_nordic:viking_yes_30"},
+      {"name": "tkvm_nordic:viking_yes_31"},
+      {"name": "tkvm_nordic:viking_yes_32"}
     ]
   }
 }

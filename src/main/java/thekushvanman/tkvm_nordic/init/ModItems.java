@@ -65,6 +65,10 @@ public class ModItems {
             () -> new CustomArmorItem(ModArmorMaterials.WORN_HAUBERK, ArmorItem.Type.LEGGINGS, new Item.Properties(),
                     "generic_inner", "worn_hauberk"));
 
+    public static final RegistryObject<Item> GALLOWGLASS_HELMET = ITEMS.register("gallowglass_helmet",
+            () -> new CustomArmorItem(ModArmorMaterials.GALLOWGLASS, ArmorItem.Type.HELMET, new Item.Properties(),
+                    "hauberk_helmet", "gallowglass_helmet"));
+
     public static final RegistryObject<Item> GALLOWGLASS_GAMBESON = ITEMS.register("gallowglass_gambeson",
             () -> new CustomArmorItem(ModArmorMaterials.GALLOWGLASS, ArmorItem.Type.CHESTPLATE, new Item.Properties(),
                     "generic_outer", "gallowglass"));
