@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "tkvm_nordic:nordic_flagship",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 50,
+    "separation": 40,
+    "salt": 914487802
+  }
+}
