@@ -15,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import thekushvanman.tkvm_nordic.init.ModEntities;
 import thekushvanman.tkvm_nordic.init.ModItems;
+import thekushvanman.tkvm_nordic.init.ModSounds;
 
 @Mod(Tkvm_nordic.MODID)
 public class Tkvm_nordic {
@@ -36,6 +37,7 @@ public class Tkvm_nordic {
         CREATIVE_MODE_TABS.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        ModSounds.SOUND_EVENTS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

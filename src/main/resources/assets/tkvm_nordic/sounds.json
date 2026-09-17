@@ -1,0 +1,20 @@
+{
+  "konungr_theme_intro": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "tkvm_nordic:konungr_theme_intro",
+        "stream": true
+      }
+    ]
+  },
+  "konungr_theme": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "tkvm_nordic:konungr_theme",
+        "stream": true
+      }
+    ]
+  }
+}

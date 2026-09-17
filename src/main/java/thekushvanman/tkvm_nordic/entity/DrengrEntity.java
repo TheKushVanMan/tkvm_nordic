@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.registries.RegistryObject;
 import thekushvanman.tkvm_nordic.init.ModItems;
 
@@ -43,7 +44,8 @@ public class DrengrEntity extends Monster {
                 .add(Attributes.MOVEMENT_SPEED, 0.28D)
                 .add(Attributes.ATTACK_DAMAGE, 5.0D)
                 .add(Attributes.ARMOR, 4.0D)
-                .add(Attributes.ARMOR_TOUGHNESS, 1.0D);
+                .add(Attributes.ARMOR_TOUGHNESS, 1.0D)
+                .add(ForgeMod.STEP_HEIGHT_ADDITION.get(), 0.5D);
     }
 
     @Override

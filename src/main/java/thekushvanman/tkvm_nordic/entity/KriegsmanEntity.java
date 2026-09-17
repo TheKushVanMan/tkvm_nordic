@@ -17,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeMod;
 import thekushvanman.tkvm_nordic.init.ModItems;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -52,7 +53,8 @@ public class KriegsmanEntity extends Monster {
                 .add(Attributes.MAX_HEALTH, 30.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.25D)
                 .add(Attributes.ATTACK_DAMAGE, 2.0D)
-                .add(Attributes.ARMOR, 1.0D);
+                .add(Attributes.ARMOR, 1.0D)
+                .add(ForgeMod.STEP_HEIGHT_ADDITION.get(), 0.5D);
     }
 
     @Override
@@ -60,7 +62,7 @@ public class KriegsmanEntity extends Monster {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }
 }

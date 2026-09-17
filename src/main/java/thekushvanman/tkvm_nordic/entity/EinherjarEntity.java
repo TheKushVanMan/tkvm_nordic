@@ -1,5 +1,8 @@
 package thekushvanman.tkvm_nordic.entity;
 
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -14,6 +17,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.registries.ForgeRegistries;
 import thekushvanman.tkvm_nordic.init.ModItems;
 
 
@@ -25,6 +30,12 @@ public class EinherjarEntity extends Monster {
         this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ModItems.WORN_HAUBERK_HELMET.get()));
         this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(ModItems.WORN_HAUBERK.get()));
         this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ModItems.WORN_HAUBERK_LEGGINGS.get()));
+
+        MobEffect stunImmunity = ForgeRegistries.MOB_EFFECTS.getValue(
+                new ResourceLocation("epicfight", "stun_immunity"));
+        if (stunImmunity != null) {
+            this.addEffect(new MobEffectInstance(stunImmunity, -1, 0, false, false, false));
+        }
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -34,7 +45,8 @@ public class EinherjarEntity extends Monster {
                 .add(Attributes.ATTACK_DAMAGE, 10.0D)
                 .add(Attributes.ARMOR, 8.0D)
                 .add(Attributes.ARMOR_TOUGHNESS, 3.0D)
-                .add(Attributes.FOLLOW_RANGE, 48.0D); // long "watchman" detection range
+                .add(Attributes.FOLLOW_RANGE, 48.0D)
+                .add(ForgeMod.STEP_HEIGHT_ADDITION.get(), 0.5D);
     }
 
 
