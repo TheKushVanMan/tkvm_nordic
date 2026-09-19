@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "tkvm_nordic:nordic_graveyard",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 40,
+    "separation": 25,
+    "salt": 623910417
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "tkvm_nordic:nordic_graveyard",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "tkvm_nordic:nordic_graveyard",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    }
+  ]
+}

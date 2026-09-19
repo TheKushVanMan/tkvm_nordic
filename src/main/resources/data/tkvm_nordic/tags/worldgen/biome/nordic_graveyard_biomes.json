@@ -1,0 +1,62 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:snowy_plains",
+    "minecraft:snowy_taiga",
+    "minecraft:grove",
+    "minecraft:snowy_slopes",
+    "minecraft:frozen_peaks",
+    {
+      "id": "biomeswevegone:eroded_borealis",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:frosted_coniferous_forest",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:frosted_taiga",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:howling_peaks",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:shattered_glacier",
+      "required": false
+    },
+    {
+      "id": "dreamwoods:snowy_forest",
+      "required": false
+    },
+    {
+      "id": "dreamwoods:snowy_pinelands",
+      "required": false
+    },
+    {
+      "id": "dreamwoods:ice_abyss",
+      "required": false
+    },
+    {
+      "id": "dreamwoods:ice_grove",
+      "required": false
+    },
+    {
+      "id": "dreamwoods:fall_snowy_grove",
+      "required": false
+    },
+    {
+      "id": "dreamwoods:frozen_shore",
+      "required": false
+    },
+    {
+      "id": "dreamwoods:spruce_slopes",
+      "required": false
+    },
+    {
+      "id": "dreamwoods:tundra",
+      "required": false
+    }
+  ]
+}
