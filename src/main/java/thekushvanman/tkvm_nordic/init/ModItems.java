@@ -80,8 +80,12 @@ public class ModItems {
     public static final RegistryObject<Item> HAUBERK_HELMET = ITEMS.register("hauberk_helmet",
             () -> new CustomArmorItem(ModArmorMaterials.HAUBERK, ArmorItem.Type.HELMET, new Item.Properties(),
                     "hauberk_helmet", "hauberk_helmet"));
+
     public static final RegistryObject<Item> WORN_HAUBERK_HELMET = ITEMS.register("worn_hauberk_helmet",
             () -> new CustomArmorItem(ModArmorMaterials.HAUBERK, ArmorItem.Type.HELMET, new Item.Properties(),
                     "worn_hauberk_helmet", "worn_hauberk_helmet"));
 
+    public static final RegistryObject<Item> NASAL_HELMET = ITEMS.register("nasal_helmet",
+            () -> new CustomArmorItem(ModArmorMaterials.HAUBERK, ArmorItem.Type.HELMET, new Item.Properties(),
+                    "hauberk_helmet", "nasal_helmet"));
 }

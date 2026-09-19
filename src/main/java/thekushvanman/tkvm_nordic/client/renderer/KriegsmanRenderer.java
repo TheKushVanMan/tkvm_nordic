@@ -12,8 +12,11 @@ import thekushvanman.tkvm_nordic.entity.KriegsmanEntity;
 
 public class KriegsmanRenderer extends HumanoidMobRenderer<KriegsmanEntity, HumanoidModel<KriegsmanEntity>> {
 
-    private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/kriegsman.png");
+    private static final ResourceLocation[] TEXTURES = new ResourceLocation[] {
+            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/kriegsman.png"),
+            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/kriegsman_1.png"),
+            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/kriegsman_2.png")
+    };
 
     public KriegsmanRenderer(EntityRendererProvider.Context context) {
         super(context, new HumanoidModel<>(context.bakeLayer(ModelLayers.PLAYER)), 0.5F);
@@ -28,6 +31,10 @@ public class KriegsmanRenderer extends HumanoidMobRenderer<KriegsmanEntity, Huma
 
     @Override
     public ResourceLocation getTextureLocation(KriegsmanEntity entity) {
-        return TEXTURE;
+        int variant = entity.getVariant();
+        if (variant < 0 || variant >= TEXTURES.length) {
+            variant = 0;
+        }
+        return TEXTURES[variant];
     }
 }
