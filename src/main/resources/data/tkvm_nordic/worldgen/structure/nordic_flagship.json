@@ -11,7 +11,7 @@
     "above_bottom": 59
   },
   "biomes": [
-	"minecraft:deep_cold_ocean"
-	],
+    "minecraft:deep_cold_ocean"
+  ],
   "use_expansion_hack": false
 }

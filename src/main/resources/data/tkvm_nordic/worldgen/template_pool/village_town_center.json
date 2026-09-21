@@ -1,12 +1,12 @@
 {
-  "name": "tkvm_nordic:nordic_graveyard",
+  "name": "tkvm_nordic:village_town_center",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "tkvm_nordic:nordic_graveyard",
+        "location": "tkvm_nordic:town_center",
         "projection": "rigid",
         "processors": {
           "processors": []

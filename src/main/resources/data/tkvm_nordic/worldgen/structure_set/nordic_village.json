@@ -1,14 +1,14 @@
 {
   "structures": [
     {
-      "structure": "tkvm_nordic:nordic_flagship",
+      "structure": "tkvm_nordic:nordic_village",
       "weight": 1
     }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "spacing": 50,
-    "separation": 40,
-    "salt": 914487802
+    "spacing": 60,
+    "separation": 35,
+    "salt": 172839405
   }
 }
