@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import thekushvanman.tkvm_nordic.init.ModEntities;
 import thekushvanman.tkvm_nordic.init.ModItems;
 import thekushvanman.tkvm_nordic.init.ModSounds;
+import thekushvanman.tkvm_nordic.init.ModStructures;
 
 @Mod(Tkvm_nordic.MODID)
 public class Tkvm_nordic {
@@ -38,6 +39,7 @@ public class Tkvm_nordic {
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
+        ModStructures.STRUCTURE_TYPES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

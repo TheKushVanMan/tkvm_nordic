@@ -10,6 +10,6 @@
   "start_height": {
     "absolute": 0
   },
-  "biomes": "#tkvm_nordic:nordic_graveyard_biomes",
+  "biomes": "#tkvm_nordic:nordic_biomes",
   "use_expansion_hack": false
 }
