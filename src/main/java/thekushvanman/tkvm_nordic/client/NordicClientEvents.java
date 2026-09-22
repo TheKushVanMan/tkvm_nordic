@@ -7,16 +7,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import thekushvanman.tkvm_nordic.client.model.ModArmorModels;
-import thekushvanman.tkvm_nordic.client.renderer.EinherjarRenderer;
-import thekushvanman.tkvm_nordic.entity.EinherjarEntity;
+import thekushvanman.tkvm_nordic.client.renderer.*;
+import thekushvanman.tkvm_nordic.entity.*;
 import thekushvanman.tkvm_nordic.init.ModEntities;
 import thekushvanman.tkvm_nordic.Tkvm_nordic;
-import thekushvanman.tkvm_nordic.client.renderer.DrengrRenderer;
-import thekushvanman.tkvm_nordic.client.renderer.KonungrRenderer;
-import thekushvanman.tkvm_nordic.client.renderer.KriegsmanRenderer;
-import thekushvanman.tkvm_nordic.entity.DrengrEntity;
-import thekushvanman.tkvm_nordic.entity.KonungrEntity;
-import thekushvanman.tkvm_nordic.entity.KriegsmanEntity;
 
 @Mod.EventBusSubscriber(modid = Tkvm_nordic.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class NordicClientEvents {
@@ -27,6 +21,7 @@ public class NordicClientEvents {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.THRALL.get(), ThrallRenderer::new);
         event.registerEntityRenderer(ModEntities.KRIEGSMAN.get(), KriegsmanRenderer::new);
         event.registerEntityRenderer(ModEntities.DRENGR.get(), DrengrRenderer::new);
         event.registerEntityRenderer(ModEntities.EINHERJAR.get(), EinherjarRenderer::new);
@@ -35,6 +30,7 @@ public class NordicClientEvents {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.THRALL.get(), ThrallEntity.createAttributes().build());
         event.put(ModEntities.KRIEGSMAN.get(), KriegsmanEntity.createAttributes().build());
         event.put(ModEntities.DRENGR.get(), DrengrEntity.createAttributes().build());
         event.put(ModEntities.EINHERJAR.get(), EinherjarEntity.createAttributes().build());

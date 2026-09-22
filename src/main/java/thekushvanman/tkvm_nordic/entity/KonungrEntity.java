@@ -14,6 +14,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeableLeatherItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -35,7 +36,13 @@ public class KonungrEntity extends Monster {
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.HAND_AXE.get()));
         this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.HAND_AXE.get()));
         this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ModItems.GALLOWGLASS_HELMET.get()));
-        this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(ModItems.GALLOWGLASS_GAMBESON.get()));
+
+        ItemStack gambeson = new ItemStack(ModItems.GALLOWGLASS_GAMBESON.get());
+        if (gambeson.getItem() instanceof DyeableLeatherItem dyeable) {
+            dyeable.setColor(gambeson, 0xE8D9A0); // off-white / pale yellow
+        }
+        this.setItemSlot(EquipmentSlot.CHEST, gambeson);
+
         this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ModItems.HAUBERK_LEGGINGS.get()));
 
         MobEffect stunImmunity = ForgeRegistries.MOB_EFFECTS.getValue(

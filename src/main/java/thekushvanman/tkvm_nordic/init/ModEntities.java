@@ -6,15 +6,17 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import thekushvanman.tkvm_nordic.Tkvm_nordic;
-import thekushvanman.tkvm_nordic.entity.DrengrEntity;
-import thekushvanman.tkvm_nordic.entity.EinherjarEntity;
-import thekushvanman.tkvm_nordic.entity.KonungrEntity;
-import thekushvanman.tkvm_nordic.entity.KriegsmanEntity;
+import thekushvanman.tkvm_nordic.entity.*;
 
 public class ModEntities {
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Tkvm_nordic.MODID);
+
+    public static final RegistryObject<EntityType<ThrallEntity>> THRALL = ENTITY_TYPES.register("thrall",
+            () -> EntityType.Builder.of(ThrallEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F)
+                    .build("thrall"));
 
 
     public static final RegistryObject<EntityType<KriegsmanEntity>> KRIEGSMAN = ENTITY_TYPES.register("kriegsman",

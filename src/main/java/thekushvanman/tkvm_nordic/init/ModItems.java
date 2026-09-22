@@ -11,7 +11,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import net.minecraft.world.item.ArmorItem;
-import thekushvanman.tkvm_nordic.items.CustomArmorItem;
+import thekushvanman.tkvm_nordic.item.GallowglassGambesonItem;
+import thekushvanman.tkvm_nordic.item.CustomArmorItem;
 
 import thekushvanman.tkvm_nordic.Tkvm_nordic;
 
@@ -27,6 +28,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SHORT_SPEAR = ITEMS.register("short_spear",
             () -> new SwordItem(NORDIC_TIER, 2, -2.0F, new Item.Properties()));
+
+    public static final RegistryObject<Item> NORSE_SEAX = ITEMS.register("norse_seax",
+            () -> new SwordItem(NORDIC_TIER, 2, -1.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> NORSE_SWORD = ITEMS.register("norse_sword",
             () -> new SwordItem(NORDIC_TIER, 3, -2.4F, new Item.Properties()));
@@ -70,8 +74,8 @@ public class ModItems {
                     "hauberk_helmet", "gallowglass_helmet"));
 
     public static final RegistryObject<Item> GALLOWGLASS_GAMBESON = ITEMS.register("gallowglass_gambeson",
-            () -> new CustomArmorItem(ModArmorMaterials.GALLOWGLASS, ArmorItem.Type.CHESTPLATE, new Item.Properties(),
-                    "generic_outer", "gallowglass"));
+            () -> new GallowglassGambesonItem(ModArmorMaterials.GALLOWGLASS, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties(), "generic_outer", "gallowglass"));
 
     public static final RegistryObject<Item> GALLOWGLASS_LEGGINGS = ITEMS.register("gallowglass_leggings",
             () -> new CustomArmorItem(ModArmorMaterials.GALLOWGLASS, ArmorItem.Type.LEGGINGS, new Item.Properties(),

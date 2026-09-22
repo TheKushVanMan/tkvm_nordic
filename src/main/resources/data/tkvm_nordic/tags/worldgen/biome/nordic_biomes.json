@@ -7,10 +7,6 @@
     "minecraft:snowy_slopes",
     "minecraft:frozen_peaks",
     {
-      "id": "biomeswevegone:eroded_borealis",
-      "required": false
-    },
-    {
       "id": "biomeswevegone:frosted_coniferous_forest",
       "required": false
     },
@@ -20,10 +16,6 @@
     },
     {
       "id": "biomeswevegone:howling_peaks",
-      "required": false
-    },
-    {
-      "id": "biomeswevegone:shattered_glacier",
       "required": false
     },
     {

@@ -1,4 +1,4 @@
-package thekushvanman.tkvm_nordic.items;
+package thekushvanman.tkvm_nordic.item;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
@@ -44,6 +44,7 @@ public class CustomArmorItem extends ArmorItem {
     @Override
     public String getArmorTexture(ItemStack stack, net.minecraft.world.entity.Entity entity, EquipmentSlot slot, String type) {
         String layer = (slot == EquipmentSlot.LEGS ? "2" : "1");
-        return Tkvm_nordic.MODID + ":textures/models/armor/" + this.textureName + "_layer_" + layer + ".png";
+        String suffix = (type != null ? "_" + type : "");
+        return Tkvm_nordic.MODID + ":textures/models/armor/" + this.textureName + "_layer_" + layer + suffix + ".png";
     }
 }
