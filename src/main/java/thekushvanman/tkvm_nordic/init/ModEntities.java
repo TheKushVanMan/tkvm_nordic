@@ -13,6 +13,11 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Tkvm_nordic.MODID);
 
+    public static final RegistryObject<EntityType<NordicVillagerEntity>> NORDIC_VILLAGER = ENTITY_TYPES.register("nordic_villager",
+            () -> EntityType.Builder.of(NordicVillagerEntity::new, MobCategory.MISC)
+                    .sized(0.6F, 1.95F)
+                    .build("nordic_villager"));
+
     public static final RegistryObject<EntityType<ThrallEntity>> THRALL = ENTITY_TYPES.register("thrall",
             () -> EntityType.Builder.of(ThrallEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F)

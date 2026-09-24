@@ -26,6 +26,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraftforge.common.ForgeMod;
+import thekushvanman.tkvm_nordic.entity.ai.PatrolRoadGoal;
 import thekushvanman.tkvm_nordic.init.ModItems;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -113,7 +114,8 @@ public class KriegsmanEntity extends Monster {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
-        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(2, new PatrolRoadGoal(this, 0.8D, 24));
+        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }

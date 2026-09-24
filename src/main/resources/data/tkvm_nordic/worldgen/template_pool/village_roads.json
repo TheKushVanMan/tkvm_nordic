@@ -8,9 +8,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "tkvm_nordic:road_straight",
         "projection": "terrain_matching",
-        "processors": {
-          "processors": []
-        }
+        "processors": { "processors": [] }
       }
     },
     {
@@ -19,9 +17,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "tkvm_nordic:road_corner",
         "projection": "terrain_matching",
-        "processors": {
-          "processors": []
-        }
+        "processors": { "processors": [] }
       }
     },
     {
@@ -30,15 +26,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "tkvm_nordic:road_t",
         "projection": "terrain_matching",
-        "processors": {
-          "processors": []
-        }
-      }
-    },
-    {
-      "weight": 2,
-      "element": {
-        "element_type": "minecraft:empty_pool_element"
+        "processors": { "processors": [] }
       }
     }
   ]

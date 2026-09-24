@@ -21,6 +21,7 @@ public class NordicClientEvents {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.NORDIC_VILLAGER.get(), NordicVillagerRenderer::new);
         event.registerEntityRenderer(ModEntities.THRALL.get(), ThrallRenderer::new);
         event.registerEntityRenderer(ModEntities.KRIEGSMAN.get(), KriegsmanRenderer::new);
         event.registerEntityRenderer(ModEntities.DRENGR.get(), DrengrRenderer::new);
@@ -30,6 +31,7 @@ public class NordicClientEvents {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.NORDIC_VILLAGER.get(), NordicVillagerEntity.createAttributes().build());
         event.put(ModEntities.THRALL.get(), ThrallEntity.createAttributes().build());
         event.put(ModEntities.KRIEGSMAN.get(), KriegsmanEntity.createAttributes().build());
         event.put(ModEntities.DRENGR.get(), DrengrEntity.createAttributes().build());
