@@ -18,16 +18,42 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 public class NordicVillagerEntity extends PathfinderMob {
 
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(NordicVillagerEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> PROFESSION =
+            SynchedEntityData.defineId(NordicVillagerEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> FEMALE =
+            SynchedEntityData.defineId(NordicVillagerEntity.class, EntityDataSerializers.BOOLEAN);
 
     public static final int VARIANT_COUNT = 6;
+
+    // Radius (in blocks) searched for a workstation.
+    private static final int WORKSTATION_SEARCH_RADIUS = 8;
+
+    // True from a fresh spawn until the first safe (non-worldgen) server tick has
+    // run the workstation scan. Never set true when loading from a save, since
+    // readAdditionalSaveData already restores a previously-assigned profession.
+    private boolean pendingWorkstationScan = false;
+
+    public enum Profession {
+        HOMESTEAD,
+        BLACKSMITH,
+        FARMER;
+
+        public static Profession byId(int id) {
+            Profession[] values = values();
+            return id >= 0 && id < values.length ? values[id] : HOMESTEAD;
+        }
+    }
 
     public NordicVillagerEntity(EntityType<? extends PathfinderMob> type, Level level) {
         super(type, level);
@@ -37,6 +63,8 @@ public class NordicVillagerEntity extends PathfinderMob {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(VARIANT, 0);
+        this.entityData.define(PROFESSION, Profession.HOMESTEAD.ordinal());
+        this.entityData.define(FEMALE, false);
     }
 
     public int getVariant() {
@@ -45,6 +73,22 @@ public class NordicVillagerEntity extends PathfinderMob {
 
     public void setVariant(int variant) {
         this.entityData.set(VARIANT, variant);
+    }
+
+    public Profession getProfession() {
+        return Profession.byId(this.entityData.get(PROFESSION));
+    }
+
+    public void setProfession(Profession profession) {
+        this.entityData.set(PROFESSION, profession.ordinal());
+    }
+
+    public boolean isFemale() {
+        return this.entityData.get(FEMALE);
+    }
+
+    public void setFemale(boolean female) {
+        this.entityData.set(FEMALE, female);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -62,24 +106,90 @@ public class NordicVillagerEntity extends PathfinderMob {
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
+    /**
+     * Scans a cube of blocks centered on the villager's current position and returns
+     * a profession based on the first matching workstation found. Falls back to
+     * HOMESTEAD (no special block found, or no match at all).
+     *
+     * IMPORTANT: never call this from finalizeSpawn(). A structure-spawned villager's
+     * finalizeSpawn runs mid-chunk-generation, where reads outside the chunk currently
+     * being generated can request a neighboring chunk off-thread and crash parallel
+     * world-gen (FastChunkGen/C2ME) with a CancellationException. Only call this from
+     * a normal server tick, once the entity is safely part of the live world.
+     */
+    private Profession findProfessionFromNearbyWorkstation() {
+        BlockPos center = this.blockPosition();
+        BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
+
+        for (int dx = -WORKSTATION_SEARCH_RADIUS; dx <= WORKSTATION_SEARCH_RADIUS; dx++) {
+            for (int dy = -2; dy <= 2; dy++) {
+                for (int dz = -WORKSTATION_SEARCH_RADIUS; dz <= WORKSTATION_SEARCH_RADIUS; dz++) {
+                    cursor.setWithOffset(center, dx, dy, dz);
+                    BlockState state = this.level().getBlockState(cursor);
+
+                    if (isAnvil(state)) {
+                        return Profession.BLACKSMITH;
+                    }
+                    if (state.is(Blocks.COMPOSTER)) {
+                        return Profession.FARMER;
+                    }
+                }
+            }
+        }
+        return Profession.HOMESTEAD;
+    }
+
+    private static boolean isAnvil(BlockState state) {
+        return state.is(Blocks.ANVIL) || state.is(Blocks.CHIPPED_ANVIL) || state.is(Blocks.DAMAGED_ANVIL);
+    }
+
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
                                         MobSpawnType spawnType, @Nullable SpawnGroupData spawnData,
                                         @Nullable CompoundTag tag) {
         this.setVariant(this.random.nextInt(VARIANT_COUNT));
+        this.setFemale(this.random.nextBoolean());
+
+        // Do NOT scan for a workstation here - see the warning on
+        // findProfessionFromNearbyWorkstation(). Defer it to the first safe tick.
+        this.pendingWorkstationScan = true;
+
         this.restrictTo(this.blockPosition(), 10);
         return super.finalizeSpawn(level, difficulty, spawnType, spawnData, tag);
+    }
+
+    @Override
+    protected void customServerAiStep() {
+        super.customServerAiStep();
+
+        // This runs as part of the entity's normal tick, after it's already a live
+        // part of the loaded world - safe to touch blocks in neighboring chunks here,
+        // unlike inside finalizeSpawn during structure/feature placement.
+        if (this.pendingWorkstationScan && this.level() instanceof ServerLevel) {
+            this.setProfession(findProfessionFromNearbyWorkstation());
+            this.pendingWorkstationScan = false;
+        }
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.putInt("Variant", this.getVariant());
+        tag.putInt("Profession", this.getProfession().ordinal());
+        tag.putBoolean("Female", this.isFemale());
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
         this.setVariant(tag.getInt("Variant"));
+        if (tag.contains("Profession")) {
+            this.setProfession(Profession.byId(tag.getInt("Profession")));
+            // Profession was already restored from the save - skip the scan entirely.
+            this.pendingWorkstationScan = false;
+        }
+        if (tag.contains("Female")) {
+            this.setFemale(tag.getBoolean("Female"));
+        }
     }
 }

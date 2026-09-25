@@ -1,11 +1,29 @@
 {
   "item.tkvm_nordic.bearded_axe": "Bearded Axe",
   "item.tkvm_nordic.dane_axe": "Dane Axe",
+  "item.tkvm_nordic.gallowglass_gambeson": "Gallowglass Gambeson",
+  "item.tkvm_nordic.gallowglass_helmet": "Gallowglass Helmet",
+  "item.tkvm_nordic.gallowglass_leggings": "Gallowglass Leggings",
   "item.tkvm_nordic.hand_axe": "Hand Axe",
+  "item.tkvm_nordic.hauberk": "Hauberk",
+  "item.tkvm_nordic.hauberk_helmet": "Hauberk Helmet",
+  "item.tkvm_nordic.hauberk_leggings": "Hauberk Leggings",
+  "item.tkvm_nordic.nasal_helmet": "Nasal Helmet",
   "item.tkvm_nordic.norse_longsword": "Norse Longsword",
+  "item.tkvm_nordic.norse_seax": "Norse Seax",
   "item.tkvm_nordic.norse_sword": "Norse Sword",
   "item.tkvm_nordic.roundshield": "Roundshield",
   "item.tkvm_nordic.short_spear": "Short Spear",
   "item.tkvm_nordic.spear": "Spear",
-  "item.tkvm_nordic.waraxe": "Waraxe"
+  "item.tkvm_nordic.waraxe": "Waraxe",
+  "item.tkvm_nordic.worn_hauberk": "Worn Hauberk",
+  "item.tkvm_nordic.worn_hauberk_helmet": "Worn Hauberk Helmet",
+  "item.tkvm_nordic.worn_hauberk_leggings": "Worn Hauberk Leggings",
+
+  "entity.tkvm_nordic.drengr": "Drengr",
+  "entity.tkvm_nordic.einherjar": "Einherjar",
+  "entity.tkvm_nordic.konungr": "Konungr",
+  "entity.tkvm_nordic.kriegsman": "Kriegsman",
+  "entity.tkvm_nordic.nordic_villager": "Nordic Villager",
+  "entity.tkvm_nordic.thrall": "Thrall"
 }

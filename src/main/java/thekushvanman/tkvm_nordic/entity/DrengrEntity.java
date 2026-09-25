@@ -17,6 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.registries.RegistryObject;
+import thekushvanman.tkvm_nordic.entity.ai.PatrolRoadGoal;
 import thekushvanman.tkvm_nordic.init.ModItems;
 
 
@@ -52,6 +53,7 @@ public class DrengrEntity extends Monster {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
+        this.goalSelector.addGoal(2, new PatrolRoadGoal(this, 0.8D, 100, 200));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
