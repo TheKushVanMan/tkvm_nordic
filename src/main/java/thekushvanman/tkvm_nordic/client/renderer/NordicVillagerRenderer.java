@@ -12,20 +12,6 @@ import thekushvanman.tkvm_nordic.entity.NordicVillagerEntity;
 
 public class NordicVillagerRenderer extends HumanoidMobRenderer<NordicVillagerEntity, HumanoidModel<NordicVillagerEntity>> {
 
-    private static final ResourceLocation BLACKSMITH_MALE =
-            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/nordic_villager/blacksmith_male.png");
-    private static final ResourceLocation BLACKSMITH_FEMALE =
-            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/nordic_villager/blacksmith_female.png");
-    private static final ResourceLocation FARMER_MALE =
-            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/nordic_villager/farmer_male.png");
-    private static final ResourceLocation FARMER_FEMALE =
-            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/nordic_villager/farmer_female.png");
-    private static final ResourceLocation HOMESTEAD_MALE =
-            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/nordic_villager/homestead_male.png");
-    private static final ResourceLocation HOMESTEAD_FEMALE =
-            new ResourceLocation(Tkvm_nordic.MODID, "textures/entity/nordic_villager/homestead_female.png");
-
-    // Two baked models: wide (Steve-style) arms for male, slim (Alex-style) for female.
     private final HumanoidModel<NordicVillagerEntity> normalModel;
     private final HumanoidModel<NordicVillagerEntity> slimModel;
 
@@ -38,18 +24,21 @@ public class NordicVillagerRenderer extends HumanoidMobRenderer<NordicVillagerEn
     @Override
     public void render(NordicVillagerEntity entity, float entityYaw, float partialTicks,
                        PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
-        // Swap the active model before LivingEntityRenderer uses it this frame.
         this.model = entity.isFemale() ? this.slimModel : this.normalModel;
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
     }
 
     @Override
     public ResourceLocation getTextureLocation(NordicVillagerEntity entity) {
-        boolean female = entity.isFemale();
-        return switch (entity.getProfession()) {
-            case BLACKSMITH -> female ? BLACKSMITH_FEMALE : BLACKSMITH_MALE;
-            case FARMER -> female ? FARMER_FEMALE : FARMER_MALE;
-            case HOMESTEAD -> female ? HOMESTEAD_FEMALE : HOMESTEAD_MALE;
+        String profession = switch (entity.getProfession()) {
+            case BLACKSMITH -> "blacksmith";
+            case FARMER -> "farmer";
+            case HOMESTEAD -> "homestead";
         };
+        String sex = entity.isFemale() ? "female" : "male";
+        int variantNumber = entity.getVariant() + 1;
+
+        return new ResourceLocation(Tkvm_nordic.MODID,
+                "textures/entity/nordic_villager/" + profession + "_" + sex + "_" + variantNumber + ".png");
     }
 }

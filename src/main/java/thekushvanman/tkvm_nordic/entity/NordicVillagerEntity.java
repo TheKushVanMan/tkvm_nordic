@@ -35,13 +35,7 @@ public class NordicVillagerEntity extends PathfinderMob {
             SynchedEntityData.defineId(NordicVillagerEntity.class, EntityDataSerializers.BOOLEAN);
 
     public static final int VARIANT_COUNT = 6;
-
-    // Radius (in blocks) searched for a workstation.
     private static final int WORKSTATION_SEARCH_RADIUS = 8;
-
-    // True from a fresh spawn until the first safe (non-worldgen) server tick has
-    // run the workstation scan. Never set true when loading from a save, since
-    // readAdditionalSaveData already restores a previously-assigned profession.
     private boolean pendingWorkstationScan = false;
 
     public enum Profession {
@@ -105,18 +99,6 @@ public class NordicVillagerEntity extends PathfinderMob {
         this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
-
-    /**
-     * Scans a cube of blocks centered on the villager's current position and returns
-     * a profession based on the first matching workstation found. Falls back to
-     * HOMESTEAD (no special block found, or no match at all).
-     *
-     * IMPORTANT: never call this from finalizeSpawn(). A structure-spawned villager's
-     * finalizeSpawn runs mid-chunk-generation, where reads outside the chunk currently
-     * being generated can request a neighboring chunk off-thread and crash parallel
-     * world-gen (FastChunkGen/C2ME) with a CancellationException. Only call this from
-     * a normal server tick, once the entity is safely part of the live world.
-     */
     private Profession findProfessionFromNearbyWorkstation() {
         BlockPos center = this.blockPosition();
         BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
@@ -149,9 +131,6 @@ public class NordicVillagerEntity extends PathfinderMob {
                                         @Nullable CompoundTag tag) {
         this.setVariant(this.random.nextInt(VARIANT_COUNT));
         this.setFemale(this.random.nextBoolean());
-
-        // Do NOT scan for a workstation here - see the warning on
-        // findProfessionFromNearbyWorkstation(). Defer it to the first safe tick.
         this.pendingWorkstationScan = true;
 
         this.restrictTo(this.blockPosition(), 10);
@@ -161,10 +140,6 @@ public class NordicVillagerEntity extends PathfinderMob {
     @Override
     protected void customServerAiStep() {
         super.customServerAiStep();
-
-        // This runs as part of the entity's normal tick, after it's already a live
-        // part of the loaded world - safe to touch blocks in neighboring chunks here,
-        // unlike inside finalizeSpawn during structure/feature placement.
         if (this.pendingWorkstationScan && this.level() instanceof ServerLevel) {
             this.setProfession(findProfessionFromNearbyWorkstation());
             this.pendingWorkstationScan = false;
