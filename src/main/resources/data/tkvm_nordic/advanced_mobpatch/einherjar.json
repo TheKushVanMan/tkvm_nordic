@@ -21,13 +21,22 @@
   },
   "default_livingmotions": {
     "idle": "epicfight:biped/living/idle",
-    "walk": "epicfight:biped/living/walk",
-    "chase": "epicfight:biped/living/run",
+    "walk": "epicfightx:biped/living/walk",
+    "chase": "epicfightx:biped/living/run",
     "death": "epicfight:biped/living/death"
   },
   "humanoid_weapon_motions": [
     {
-      "weapon_categories": ["axe", "hoe", "pickaxe", "shovel", "sword"],
+      "weapon_categories": ["sword"],
+      "style":"common",
+      "livingmotions": {
+        "chase": "epicfight:biped/living/run_longsword",
+        "walk": "epicfight:biped/living/walk_longsword",
+        "idle": "epicfight:biped/living/hold_longsword"
+      }
+    },
+    {
+      "weapon_categories": ["longsword", "s_longsword", "s_greatsword", "axe"],
       "style":"common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_greatsword",
@@ -38,9 +47,9 @@
   ],
   "custom_guard_motion": [
     {
-      "weapon_categories": ["longsword","tachi","sword", "s_longsword", "axe"],
+      "weapon_categories": ["longsword","tachi","sword", "s_longsword"],
       "style":"common",
-      "guard": "indestructible:guard/guard_spear",
+      "guard": "indestructible:guard/guard_longsword",
       "stamina_cost_multiply": 1,
       "can_block_projectile" : true
     }
@@ -54,103 +63,9 @@
   },
   "combat_behavior": [
     {
-      "weapon_categories": ["sword", "axe"],
+      "weapon_categories": ["sword", "axe", "spear"],
       "style": "common",
       "behavior_series": [
-        {
-          "weight": 5.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 60,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
-              ],
-              "wander": 20,
-              "inaction_time": 20,
-              "x_axis": 1.0,
-              "z_axis": -1.0
-            }
-          ]
-        },
-        {
-          "weight": 5.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 60,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
-              ],
-              "wander": 20,
-              "inaction_time": 20,
-              "x_axis": 1,
-              "z_axis": -1.0
-            }
-          ]
-        },
-        {
-          "weight": 5.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 80,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
-              ],
-              "wander": 40,
-              "inaction_time": 20,
-              "x_axis": -1.0,
-              "z_axis": -1.0
-            }
-          ]
-        },
-        {
-          "weight": 5.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 80,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
-              ],
-              "wander": 40,
-              "inaction_time": 20,
-              "x_axis": 1.0,
-              "z_axis": -1.0
-            }
-          ]
-        },
-        {
-          "weight": 10.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 60,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}
-              ],
-              "wander": 15,
-              "inaction_time": 10,
-              "x_axis": 0.0,
-              "z_axis": -1.0
-            },
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}
-              ],
-              "wander": 15,
-              "inaction_time": 10,
-              "x_axis": -1.0,
-              "z_axis": 0.0
-            }
-          ]
-        },
         {
           "weight": 10.0,
           "canBeInterrupted": false,
@@ -187,7 +102,7 @@
               "conditions": [
                 {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
               ],
-              "animation": "cdmoveset:biped/new/sword/sword_onehand_auto_1",
+              "animation": "cdmoveset:biped/new/dual_greatsword/combat/greatsword_twohand_auto_1",
               "stamina": 5,
               "convert_time": 0.3,
               "set_phase": 1,
@@ -204,7 +119,24 @@
               "conditions": [
                 {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
               ],
-              "animation": "cdmoveset:biped/new/sword/sword_onehand_auto_2",
+              "animation": "cdmoveset:biped/new/dual_greatsword/combat/greatsword_twohand_auto_2",
+              "stamina": 5,
+              "convert_time": 0.3,
+              "set_phase": 1,
+              "damage_modifier": {
+                "damage": 1,
+                "impact": 1,
+                "armor_negation": 1
+              },
+              "command_list": [
+              ],
+              "play_speed": 1.0
+            },
+            {
+              "conditions": [
+                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+              ],
+              "animation": "cdmoveset:biped/new/dual_greatsword/combat/greatsword_twohand_auto_3",
               "stamina": 5,
               "convert_time": 0.3,
               "set_phase": 1,

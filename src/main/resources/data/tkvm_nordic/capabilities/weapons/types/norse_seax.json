@@ -1,0 +1,45 @@
+{
+  "category": "sword",
+  "swing_sound": "tkvm_weapons:sword_swing",
+  "hit_sound": "tkvm_weapons:slash_light",
+  "hit_particle": "epicfight:hit_blade",
+  "styles": {
+    "cases": [],
+    "default": "one_hand"
+  },
+  "livingmotion_modifier": {
+    "one_hand": {
+      "fall": "epicfight:biped/living/fall",
+      "idle": "epicfight:biped/living/idle",
+      "run": "epicfight:biped/living/run",
+      "block": "epicfight:biped/skill/guard_longsword",
+      "sneak": "epicfight:biped/living/hold_longsword",
+      "kneel": "epicfight:biped/living/hold_longsword",
+      "walk": "epicfight:biped/living/walk_longsword"
+    }
+  },
+  "combos": {
+    "one_hand": [
+      "epicfight:biped/combat/sword_auto1",
+      "epicfight:biped/combat/sword_auto2",
+      "epicfight:biped/combat/sword_auto3",
+      "epicfight:biped/combat/sword_auto4",
+      "epicfight:biped/combat/sword_dash",
+      "epicfight:biped/combat/sword_airslash"
+    ]
+  },
+  "collider": {
+    "size": [
+      0.3,
+      0.5,
+      0.5
+    ],
+    "number": 5,
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ]
+  },
+  "usable_in_offhand": false
+}

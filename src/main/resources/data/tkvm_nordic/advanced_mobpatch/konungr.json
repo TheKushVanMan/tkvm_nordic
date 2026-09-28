@@ -63,7 +63,7 @@
   },
   "combat_behavior": [
     {
-      "weapon_categories": ["sword", "axe"],
+      "weapon_categories": ["sword", "axe", "spear"],
       "style": "common",
       "behavior_series": [
         {
