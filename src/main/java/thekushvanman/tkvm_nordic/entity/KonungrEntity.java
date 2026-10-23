@@ -93,4 +93,9 @@ public class KonungrEntity extends Monster {
         return ModSounds.VIKING_DEATH.get();
     }
 
+    @Override
+    public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+        return false;
+    }
+
 }
