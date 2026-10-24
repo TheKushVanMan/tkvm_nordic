@@ -27,16 +27,16 @@
   },
   "humanoid_weapon_motions": [
     {
-      "weapon_categories": ["axe", "hoe", "pickaxe", "shovel", "sword"],
+      "weapon_categories": ["axe", "sword", "spear"],
       "style":"common",
       "livingmotions": {
-        "chase": "epicfight:biped/living/run_longsword",
-        "walk": "epicfight:biped/living/walk_longsword",
-        "idle": "epicfight:biped/living/hold_longsword"
+        "chase": "epicfight:biped/living/run_spear",
+        "walk": "epicfight:biped/living/walk_spear",
+        "idle": "epicfight:biped/living/hold_spear"
       }
     },
     {
-      "weapon_categories": ["longsword", "s_longsword", "s_greatsword", "spear", "s_spear"],
+      "weapon_categories": ["spear"],
       "style":"common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_greatsword",
@@ -47,9 +47,9 @@
   ],
   "custom_guard_motion": [
     {
-      "weapon_categories": ["longsword","tachi","sword", "s_longsword"],
+      "weapon_categories": ["longsword", "axe"],
       "style":"common",
-      "guard": "indestructible:guard/guard_longsword",
+      "guard": "indestructible:guard/guard_spear",
       "stamina_cost_multiply": 1,
       "can_block_projectile" : true
     }
@@ -63,126 +63,64 @@
   },
   "combat_behavior": [
     {
-      "weapon_categories": ["axe", "spear"],
+      "weapon_categories": ["axe"],
       "style": "common",
       "behavior_series": [
         {
           "weight": 5.0,
           "canBeInterrupted": false,
           "looping": false,
-          "cooldown": 60,
+          "cooldown": 30,
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
               ],
-              "wander": 20,
-              "inaction_time": 20,
-              "x_axis": 1.0,
-              "z_axis": -1.0
-            }
-          ]
-        },
-        {
-          "weight": 5.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 60,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
-              ],
-              "wander": 20,
-              "inaction_time": 20,
-              "x_axis": 1,
-              "z_axis": -1.0
-            }
-          ]
-        },
-        {
-          "weight": 5.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 80,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
-              ],
-              "wander": 40,
-              "inaction_time": 20,
-              "x_axis": -1.0,
-              "z_axis": -1.0
-            }
-          ]
-        },
-        {
-          "weight": 5.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 80,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
-              ],
-              "wander": 40,
-              "inaction_time": 20,
-              "x_axis": 1.0,
-              "z_axis": -1.0
-            }
-          ]
-        },
-        {
-          "weight": 10.0,
-          "canBeInterrupted": false,
-          "looping": false,
-          "cooldown": 60,
-          "behaviors": [
-            {
-              "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}
-              ],
-              "wander": 15,
-              "inaction_time": 10,
-              "x_axis": 0.0,
-              "z_axis": -1.0
+              "animation": "epicfight:biped/combat/greatsword_auto1",
+              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
+              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
+              "command_list": [], "play_speed": 1.0
             },
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
               ],
-              "wander": 15,
-              "inaction_time": 10,
-              "x_axis": -1.0,
-              "z_axis": 0.0
+              "animation": "epicfight:biped/combat/greatsword_auto2",
+              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
+              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
+              "command_list": [], "play_speed": 1.0
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "weapon_categories": ["spear"],
+      "style": "common",
+      "behavior_series": [
         {
-          "weight": 10.0,
+          "weight": 5.0,
           "canBeInterrupted": false,
           "looping": false,
-          "cooldown": 60,
+          "cooldown": 30,
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
               ],
-              "wander": 20,
-              "inaction_time": 20,
-              "x_axis": 0.0,
-              "z_axis": 1.0
+              "animation": "epicfight:biped/combat/spear_twohand_auto1",
+              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
+              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
+              "command_list": [], "play_speed": 1.0
             },
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
               ],
-              "wander": 20,
-              "inaction_time": 20,
-              "x_axis": 1.0,
-              "z_axis": 0.0
+              "animation": "epicfight:biped/combat/spear_twohand_auto2",
+              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
+              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
+              "command_list": [], "play_speed": 1.0
             }
           ]
         },
@@ -194,37 +132,12 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
               ],
-              "animation": "cdmoveset:biped/new/sword/sword_onehand_auto_1",
-              "stamina": 5,
-              "convert_time": 0.3,
-              "set_phase": 1,
-              "damage_modifier": {
-                "damage": 1,
-                "impact": 1,
-                "armor_negation": 1
-              },
-              "command_list": [
-              ],
-              "play_speed": 1.0
-            },
-            {
-              "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
-              ],
-              "animation": "cdmoveset:biped/new/sword/sword_onehand_auto_2",
-              "stamina": 5,
-              "convert_time": 0.3,
-              "set_phase": 1,
-              "damage_modifier": {
-                "damage": 1,
-                "impact": 1,
-                "armor_negation": 1
-              },
-              "command_list": [
-              ],
-              "play_speed": 1.0
+              "animation": "epicfight:biped/combat/mob_spear_twohand3",
+              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
+              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
+              "command_list": [], "play_speed": 1.0
             }
           ]
         }

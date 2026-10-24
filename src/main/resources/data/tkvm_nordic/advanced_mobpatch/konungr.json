@@ -9,7 +9,7 @@
     "armor_negation": 0.0,
     "max_strikes": 3,
     "chasing_speed": 0.8,
-    "scale": 1.0,
+    "scale": 1.5,
     "max_stamina": 50,
     "stamina_regan_multiply": 0.5,
     "stamina_regan_delay": 120,

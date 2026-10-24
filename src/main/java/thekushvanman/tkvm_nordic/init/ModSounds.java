@@ -114,4 +114,24 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> VIKING_YES = SOUND_EVENTS.register("viking_yes",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Tkvm_nordic.MODID, "viking_yes")));
 
+    // ---- Nordic villager voices (picked by gender in NordicVillagerEntity) ----
+
+    public static final RegistryObject<SoundEvent> NORDIC_MALE_AMBIENT = SOUND_EVENTS.register("nordic_male_ambient",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Tkvm_nordic.MODID, "nordic_male_ambient")));
+
+    public static final RegistryObject<SoundEvent> NORDIC_MALE_HURT = SOUND_EVENTS.register("nordic_male_hurt",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Tkvm_nordic.MODID, "nordic_male_hurt")));
+
+    public static final RegistryObject<SoundEvent> NORDIC_MALE_DEATH = SOUND_EVENTS.register("nordic_male_death",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Tkvm_nordic.MODID, "nordic_male_death")));
+
+    public static final RegistryObject<SoundEvent> NORDIC_FEMALE_AMBIENT = SOUND_EVENTS.register("nordic_female_ambient",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Tkvm_nordic.MODID, "nordic_female_ambient")));
+
+    public static final RegistryObject<SoundEvent> NORDIC_FEMALE_HURT = SOUND_EVENTS.register("nordic_female_hurt",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Tkvm_nordic.MODID, "nordic_female_hurt")));
+
+    public static final RegistryObject<SoundEvent> NORDIC_FEMALE_DEATH = SOUND_EVENTS.register("nordic_female_death",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Tkvm_nordic.MODID, "nordic_female_death")));
+
 }

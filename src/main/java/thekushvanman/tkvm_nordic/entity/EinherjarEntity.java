@@ -1,8 +1,5 @@
 package thekushvanman.tkvm_nordic.entity;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -18,7 +15,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.registries.ForgeRegistries;
 import thekushvanman.tkvm_nordic.init.ModItems;
 
 
@@ -26,21 +22,20 @@ public class EinherjarEntity extends Monster {
 
     public EinherjarEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+
+        // Never drop spawn equipment on death.
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            this.setDropChance(slot, 0.0F);
+        }
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.BEARDED_AXE.get()));
         this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ModItems.WORN_HAUBERK_HELMET.get()));
         this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(ModItems.WORN_HAUBERK.get()));
         this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ModItems.WORN_HAUBERK_LEGGINGS.get()));
-
-        MobEffect stunImmunity = ForgeRegistries.MOB_EFFECTS.getValue(
-                new ResourceLocation("epicfight", "stun_immunity"));
-        if (stunImmunity != null) {
-            this.addEffect(new MobEffectInstance(stunImmunity, -1, 0, false, false, false));
-        }
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 120.0D)
+                .add(Attributes.MAX_HEALTH, 50.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.26D)
                 .add(Attributes.ATTACK_DAMAGE, 10.0D)
                 .add(Attributes.ARMOR, 8.0D)

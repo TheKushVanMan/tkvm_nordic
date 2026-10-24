@@ -7,8 +7,10 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
@@ -28,6 +30,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
+import thekushvanman.tkvm_nordic.init.ModSounds;
 
 public class NordicVillagerEntity extends PathfinderMob {
 
@@ -94,7 +97,7 @@ public class NordicVillagerEntity extends PathfinderMob {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D)
-                .add(Attributes.FOLLOW_RANGE, 16.0D)
+                .add(Attributes.FOLLOW_RANGE, 16.0D)   // also the radius villagers are called to help from
                 .add(Attributes.ATTACK_DAMAGE, 2.0D);   // weak punch; required by MeleeAttackGoal
     }
 
@@ -105,8 +108,12 @@ public class NordicVillagerEntity extends PathfinderMob {
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 0.6D));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-        this.targetSelector.addGoal(1, new HurtByTargetGoal(this, NordicVillagerEntity.class));
+
+        // Fights back against whatever hurt it (hits from other villagers are ignored),
+        // and calls nearby Nordic villagers that aren't already fighting to join in.
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this, NordicVillagerEntity.class).setAlertOthers());
     }
+
     private Profession findProfessionFromNearbyWorkstation() {
         BlockPos center = this.hasRestriction() ? this.getRestrictCenter() : this.blockPosition();
         BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
@@ -191,6 +198,23 @@ public class NordicVillagerEntity extends PathfinderMob {
         if (tag.contains("Female")) {
             this.setFemale(tag.getBoolean("Female"));
         }
+    }
+
+    // ---- Sounds: one entity, separate male / female audio sets ----
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return this.isFemale() ? ModSounds.NORDIC_FEMALE_AMBIENT.get() : ModSounds.NORDIC_MALE_AMBIENT.get();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return this.isFemale() ? ModSounds.NORDIC_FEMALE_HURT.get() : ModSounds.NORDIC_MALE_HURT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return this.isFemale() ? ModSounds.NORDIC_FEMALE_DEATH.get() : ModSounds.NORDIC_MALE_DEATH.get();
     }
 
     @Override

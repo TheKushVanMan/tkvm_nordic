@@ -653,5 +653,41 @@
       {"name": "tkvm_nordic:viking_yes_31"},
       {"name": "tkvm_nordic:viking_yes_32"}
     ]
+  },
+  "nordic_male_ambient": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:nordic_villager/male/ambient_01"}
+    ]
+  },
+  "nordic_male_hurt": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:nordic_villager/male/hurt_01"}
+    ]
+  },
+  "nordic_male_death": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:nordic_villager/male/death_01"}
+    ]
+  },
+  "nordic_female_ambient": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:nordic_villager/female/ambient_01"}
+    ]
+  },
+  "nordic_female_hurt": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:nordic_villager/female/hurt_01"}
+    ]
+  },
+  "nordic_female_death": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:nordic_villager/female/death_01"}
+    ]
   }
 }

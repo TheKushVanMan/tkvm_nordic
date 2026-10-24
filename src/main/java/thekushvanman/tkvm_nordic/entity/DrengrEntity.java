@@ -32,6 +32,11 @@ public class DrengrEntity extends Monster {
 
     public DrengrEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+
+        // Never drop spawn equipment on death.
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            this.setDropChance(slot, 0.0F);
+        }
         RegistryObject<Item> weapon = WEAPON_POOL[this.random.nextInt(WEAPON_POOL.length)];
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(weapon.get()));
         this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ModItems.HAUBERK_HELMET.get()));
@@ -41,7 +46,7 @@ public class DrengrEntity extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 50.0D)
+                .add(Attributes.MAX_HEALTH, 30.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.28D)
                 .add(Attributes.ATTACK_DAMAGE, 5.0D)
                 .add(Attributes.ARMOR, 4.0D)

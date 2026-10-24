@@ -4,9 +4,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -29,8 +27,6 @@ import net.minecraftforge.common.ForgeMod;
 import thekushvanman.tkvm_nordic.entity.ai.PatrolRoadGoal;
 import thekushvanman.tkvm_nordic.init.ModItems;
 import net.minecraftforge.registries.RegistryObject;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
 public class KriegsmanEntity extends Monster {
@@ -50,6 +46,11 @@ public class KriegsmanEntity extends Monster {
     public KriegsmanEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
 
+        // Never drop spawn equipment on death.
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            this.setDropChance(slot, 0.0F);
+        }
+
         RegistryObject<Item> weapon = WEAPON_POOL[this.random.nextInt(WEAPON_POOL.length)];
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(weapon.get()));
 
@@ -59,12 +60,6 @@ public class KriegsmanEntity extends Monster {
 
         this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ModItems.NASAL_HELMET.get()));
         this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(ModItems.HAUBERK.get()));
-
-        MobEffect stunImmunity = ForgeRegistries.MOB_EFFECTS.getValue(
-                new ResourceLocation("epicfight", "stun_immunity"));
-        if (stunImmunity != null) {
-            this.addEffect(new MobEffectInstance(stunImmunity, -1, 0, false, false, false));
-        }
     }
 
     @Override
@@ -103,7 +98,7 @@ public class KriegsmanEntity extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 30.0D)
+                .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.25D)
                 .add(Attributes.ATTACK_DAMAGE, 2.0D)
                 .add(Attributes.ARMOR, 1.0D)
