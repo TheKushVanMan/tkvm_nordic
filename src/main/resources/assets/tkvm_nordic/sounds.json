@@ -657,37 +657,135 @@
   "nordic_male_ambient": {
     "category": "neutral",
     "sounds": [
-      {"name": "tkvm_nordic:nordic_villager/male/ambient_01"}
+      {"name": "tkvm_nordic:villager/male_nordic_idle_01"},
+      {"name": "tkvm_nordic:villager/male_nordic_idle_02"},
+      {"name": "tkvm_nordic:villager/male_nordic_idle_03"},
+      {"name": "tkvm_nordic:villager/male_nordic_idle_04"},
+      {"name": "tkvm_nordic:villager/male_nordic_idle_05"},
+      {"name": "tkvm_nordic:villager/male_nordic_idle_06"},
+      {"name": "tkvm_nordic:villager/male_nordic_idle_07"}
     ]
   },
   "nordic_male_hurt": {
     "category": "neutral",
     "sounds": [
-      {"name": "tkvm_nordic:nordic_villager/male/hurt_01"}
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_01"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_02"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_03"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_04"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_05"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_06"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_07"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_08"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_09"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_10"},
+      {"name": "tkvm_nordic:villager/male_nordic_hurt_11"}
     ]
   },
   "nordic_male_death": {
     "category": "neutral",
     "sounds": [
-      {"name": "tkvm_nordic:nordic_villager/male/death_01"}
+      {"name": "tkvm_nordic:villager/male_nordic_death_01"},
+      {"name": "tkvm_nordic:villager/male_nordic_death_02"},
+      {"name": "tkvm_nordic:villager/male_nordic_death_03"},
+      {"name": "tkvm_nordic:villager/male_nordic_death_04"},
+      {"name": "tkvm_nordic:villager/male_nordic_death_05"}
     ]
   },
   "nordic_female_ambient": {
     "category": "neutral",
     "sounds": [
-      {"name": "tkvm_nordic:nordic_villager/female/ambient_01"}
+      {"name": "tkvm_nordic:villager/female_nordic_idle_01"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_02"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_03"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_04"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_05"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_06"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_07"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_08"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_09"},
+      {"name": "tkvm_nordic:villager/female_nordic_idle_10"}
     ]
   },
   "nordic_female_hurt": {
     "category": "neutral",
     "sounds": [
-      {"name": "tkvm_nordic:nordic_villager/female/hurt_01"}
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_01"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_02"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_03"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_04"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_05"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_06"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_07"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_08"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_09"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_10"},
+      {"name": "tkvm_nordic:villager/female_nordic_hurt_11"}
     ]
   },
   "nordic_female_death": {
     "category": "neutral",
     "sounds": [
-      {"name": "tkvm_nordic:nordic_villager/female/death_01"}
+      {"name": "tkvm_nordic:villager/female_nordic_death_01"},
+      {"name": "tkvm_nordic:villager/female_nordic_death_02"},
+      {"name": "tkvm_nordic:villager/female_nordic_death_03"},
+      {"name": "tkvm_nordic:villager/female_nordic_death_04"},
+      {"name": "tkvm_nordic:villager/female_nordic_death_05"},
+      {"name": "tkvm_nordic:villager/female_nordic_death_06"}
+    ]
+  },
+  "nordic_female_grunt_heavy": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_01"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_02"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_03"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_04"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_05"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_06"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_07"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_08"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_09"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_10"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_11"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_12"},
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_heavy_13"}
+    ]
+  },
+  "nordic_female_grunt_light": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:villager/female_nordic_grunt_light_01"}
+    ]
+  },
+  "nordic_male_grunt_heavy": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_01"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_02"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_03"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_04"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_05"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_06"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_07"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_08"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_09"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_heavy_10"}
+    ]
+  },
+  "nordic_male_grunt_light": {
+    "category": "neutral",
+    "sounds": [
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_01"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_02"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_03"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_04"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_05"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_06"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_07"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_08"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_09"},
+      {"name": "tkvm_nordic:villager/male_nordic_grunt_light_10"}
     ]
   }
 }
