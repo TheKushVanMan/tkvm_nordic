@@ -1,5 +1,8 @@
 package thekushvanman.tkvm_nordic.entity;
 
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.damagesource.DamageSource;
+import thekushvanman.tkvm_nordic.init.ModSounds;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -57,5 +60,17 @@ public class EinherjarEntity extends Monster {
     @Override
     public boolean removeWhenFarAway(double distanceToClosestPlayer) {
         return false;
+    }
+
+    // ---- Voice: shares the male Nordic villager voice set ----
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return ModSounds.NORDIC_MALE_HURT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.NORDIC_MALE_DEATH.get();
     }
 }

@@ -1,5 +1,8 @@
 package thekushvanman.tkvm_nordic.entity;
 
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.damagesource.DamageSource;
+import thekushvanman.tkvm_nordic.init.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -108,5 +111,17 @@ public class ThrallEntity extends Monster {
     @Override
     public boolean removeWhenFarAway(double distanceToClosestPlayer) {
         return false;
+    }
+
+    // ---- Voice: shares the male Nordic villager voice set ----
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return ModSounds.NORDIC_MALE_HURT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.NORDIC_MALE_DEATH.get();
     }
 }

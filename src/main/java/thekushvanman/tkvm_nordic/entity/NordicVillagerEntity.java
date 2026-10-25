@@ -29,6 +29,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import thekushvanman.tkvm_nordic.init.ModSounds;
 
@@ -45,6 +46,12 @@ public class NordicVillagerEntity extends PathfinderMob {
     private static final int WORKSTATION_SEARCH_RADIUS = 8;
     private boolean pendingWorkstationScan = false;
     private int professionCheckCooldown = 0;
+    private static final double GREET_RADIUS = 5.0D;   
+    private static final int GREET_DELAY = 40;          
+    private static final int GREET_COOLDOWN = 600;      
+    private int playerNearbyTicks = 0;
+    private int greetCooldown = 0;
+    private boolean greetedThisVisit = false;
 
     public enum Profession {
         HOMESTEAD,
@@ -97,8 +104,8 @@ public class NordicVillagerEntity extends PathfinderMob {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D)
-                .add(Attributes.FOLLOW_RANGE, 16.0D)   // also the radius villagers are called to help from
-                .add(Attributes.ATTACK_DAMAGE, 2.0D);   // weak punch; required by MeleeAttackGoal
+                .add(Attributes.FOLLOW_RANGE, 16.0D)   
+                .add(Attributes.ATTACK_DAMAGE, 2.0D);   
     }
 
     @Override
@@ -109,8 +116,8 @@ public class NordicVillagerEntity extends PathfinderMob {
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 
-        // Fights back against whatever hurt it (hits from other villagers are ignored),
-        // and calls nearby Nordic villagers that aren't already fighting to join in.
+        
+        
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this, NordicVillagerEntity.class).setAlertOthers());
     }
 
@@ -155,9 +162,10 @@ public class NordicVillagerEntity extends PathfinderMob {
     @Override
     protected void customServerAiStep() {
         super.customServerAiStep();
+        this.tickGreeting();
 
-        // Scan on the first tick after spawning, then re-check every ~5-7 seconds while
-        // still a Homestead villager. Villagers that already have a job keep it.
+        
+        
         boolean recheck = this.getProfession() == Profession.HOMESTEAD && --this.professionCheckCooldown <= 0;
         if (!this.pendingWorkstationScan && !recheck) {
             return;
@@ -200,12 +208,40 @@ public class NordicVillagerEntity extends PathfinderMob {
         }
     }
 
-    // ---- Sounds: one entity, separate male / female audio sets ----
+    private void tickGreeting() {
+        if (this.greetCooldown > 0) {
+            this.greetCooldown--;
+        }
 
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return this.isFemale() ? ModSounds.NORDIC_FEMALE_AMBIENT.get() : ModSounds.NORDIC_MALE_AMBIENT.get();
+        Player player = this.level().getNearestPlayer(this, GREET_RADIUS);
+        if (player == null || player.isSpectator() || this.getTarget() != null) {
+            
+            this.playerNearbyTicks = 0;
+            this.greetedThisVisit = false;
+            return;
+        }
+
+        this.playerNearbyTicks++;
+        if (!this.greetedThisVisit && this.greetCooldown <= 0
+                && this.playerNearbyTicks >= GREET_DELAY && this.isLookingAt(player)) {
+            this.playSound(this.isFemale()
+                    ? ModSounds.NORDIC_FEMALE_AMBIENT.get()
+                    : ModSounds.NORDIC_MALE_AMBIENT.get(), this.getSoundVolume(), this.getVoicePitch());
+            this.greetedThisVisit = true;
+            this.greetCooldown = GREET_COOLDOWN;
+        }
     }
+
+    /** True if the villager's head is turned toward the player and nothing blocks the view. */
+    private boolean isLookingAt(Player player) {
+        Vec3 view = this.getViewVector(1.0F).normalize();
+        Vec3 toPlayer = new Vec3(player.getX() - this.getX(),
+                player.getEyeY() - this.getEyeY(),
+                player.getZ() - this.getZ()).normalize();
+        return view.dot(toPlayer) > 0.9D && this.hasLineOfSight(player);
+    }
+
+    
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {

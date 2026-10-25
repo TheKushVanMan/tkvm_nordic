@@ -662,8 +662,7 @@
       {"name": "tkvm_nordic:villager/male_nordic_idle_03"},
       {"name": "tkvm_nordic:villager/male_nordic_idle_04"},
       {"name": "tkvm_nordic:villager/male_nordic_idle_05"},
-      {"name": "tkvm_nordic:villager/male_nordic_idle_06"},
-      {"name": "tkvm_nordic:villager/male_nordic_idle_07"}
+      {"name": "tkvm_nordic:villager/male_nordic_idle_06"}
     ]
   },
   "nordic_male_hurt": {
