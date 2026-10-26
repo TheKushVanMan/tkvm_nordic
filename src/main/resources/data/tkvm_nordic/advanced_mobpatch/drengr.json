@@ -27,8 +27,12 @@
   },
   "humanoid_weapon_motions": [
     {
-      "weapon_categories": ["axe", "sword", "spear"],
-      "style":"common",
+      "weapon_categories": [
+        "axe",
+        "sword",
+        "spear"
+      ],
+      "style": "common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_spear",
         "walk": "epicfight:biped/living/walk_spear",
@@ -36,8 +40,10 @@
       }
     },
     {
-      "weapon_categories": ["spear"],
-      "style":"common",
+      "weapon_categories": [
+        "spear"
+      ],
+      "style": "common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_greatsword",
         "walk": "epicfight:biped/living/walk_greatsword",
@@ -47,11 +53,14 @@
   ],
   "custom_guard_motion": [
     {
-      "weapon_categories": ["longsword", "axe"],
-      "style":"common",
+      "weapon_categories": [
+        "longsword",
+        "axe"
+      ],
+      "style": "common",
       "guard": "indestructible:guard/guard_spear",
       "stamina_cost_multiply": 1,
-      "can_block_projectile" : true
+      "can_block_projectile": true
     }
   ],
   "stun_animations": {
@@ -63,7 +72,9 @@
   },
   "combat_behavior": [
     {
-      "weapon_categories": ["axe"],
+      "weapon_categories": [
+        "axe"
+      ],
       "style": "common",
       "behavior_series": [
         {
@@ -74,28 +85,70 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "epicfight:biped/combat/greatsword_auto1",
-              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
-              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
-              "command_list": [], "play_speed": 1.0
+              "stamina": 5,
+              "convert_time": 0.3,
+              "set_phase": 1,
+              "damage_modifier": {
+                "damage": 1,
+                "impact": 1,
+                "armor_negation": 1
+              },
+              "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "playsound tkvm_nordic:nordic_male_grunt_light hostile @a ~ ~ ~",
+                  "execute_at_target": false
+                }
+              ],
+              "play_speed": 1.0
             },
             {
               "conditions": [
-                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "epicfight:biped/combat/greatsword_auto2",
-              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
-              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
-              "command_list": [], "play_speed": 1.0
+              "stamina": 5,
+              "convert_time": 0.3,
+              "set_phase": 1,
+              "damage_modifier": {
+                "damage": 1,
+                "impact": 1,
+                "armor_negation": 1
+              },
+              "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "playsound tkvm_nordic:nordic_male_grunt_heavy hostile @a ~ ~ ~",
+                  "execute_at_target": false
+                }
+              ],
+              "play_speed": 1.0
             }
           ]
         }
       ]
     },
     {
-      "weapon_categories": ["spear"],
+      "weapon_categories": [
+        "spear"
+      ],
       "style": "common",
       "behavior_series": [
         {
@@ -106,21 +159,61 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "epicfight:biped/combat/spear_twohand_auto1",
-              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
-              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
-              "command_list": [], "play_speed": 1.0
+              "stamina": 5,
+              "convert_time": 0.3,
+              "set_phase": 1,
+              "damage_modifier": {
+                "damage": 1,
+                "impact": 1,
+                "armor_negation": 1
+              },
+              "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "playsound tkvm_nordic:nordic_male_grunt_light hostile @a ~ ~ ~",
+                  "execute_at_target": false
+                }
+              ],
+              "play_speed": 1.0
             },
             {
               "conditions": [
-                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "epicfight:biped/combat/spear_twohand_auto2",
-              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
-              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
-              "command_list": [], "play_speed": 1.0
+              "stamina": 5,
+              "convert_time": 0.3,
+              "set_phase": 1,
+              "damage_modifier": {
+                "damage": 1,
+                "impact": 1,
+                "armor_negation": 1
+              },
+              "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "playsound tkvm_nordic:nordic_male_grunt_heavy hostile @a ~ ~ ~",
+                  "execute_at_target": false
+                }
+              ],
+              "play_speed": 1.0
             }
           ]
         },
@@ -132,12 +225,32 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate": "within_eye_height"}, {"predicate": "within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "epicfight:biped/combat/mob_spear_twohand3",
-              "stamina": 5, "convert_time": 0.3, "set_phase": 1,
-              "damage_modifier": {"damage": 1, "impact": 1, "armor_negation": 1},
-              "command_list": [], "play_speed": 1.0
+              "stamina": 5,
+              "convert_time": 0.3,
+              "set_phase": 1,
+              "damage_modifier": {
+                "damage": 1,
+                "impact": 1,
+                "armor_negation": 1
+              },
+              "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "playsound tkvm_nordic:nordic_male_grunt_heavy hostile @a ~ ~ ~",
+                  "execute_at_target": false
+                }
+              ],
+              "play_speed": 1.0
             }
           ]
         }

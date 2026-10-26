@@ -1,5 +1,6 @@
 package thekushvanman.tkvm_nordic.entity;
 
+import thekushvanman.tkvm_nordic.entity.ai.NordicHurtByTargetGoal;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import thekushvanman.tkvm_nordic.init.ModSounds;
@@ -11,7 +12,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -24,7 +24,7 @@ import thekushvanman.tkvm_nordic.entity.ai.PatrolRoadGoal;
 import thekushvanman.tkvm_nordic.init.ModItems;
 
 
-public class DrengrEntity extends Monster {
+public class DrengrEntity extends Monster implements NordicFaction {
 
 
     private static final RegistryObject<Item>[] WEAPON_POOL = new RegistryObject[] {
@@ -63,8 +63,8 @@ public class DrengrEntity extends Monster {
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(2, new PatrolRoadGoal(this, 0.8D, 100, 200));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(1, new NordicHurtByTargetGoal(this));
     }
 
     @Override

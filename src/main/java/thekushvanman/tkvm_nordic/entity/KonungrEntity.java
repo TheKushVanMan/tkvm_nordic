@@ -1,5 +1,6 @@
 package thekushvanman.tkvm_nordic.entity;
 
+import thekushvanman.tkvm_nordic.entity.ai.NordicHurtByTargetGoal;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -7,7 +8,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -23,7 +23,7 @@ import net.minecraftforge.common.ForgeMod;
 
 import thekushvanman.tkvm_nordic.init.ModItems;
 
-public class KonungrEntity extends Monster {
+public class KonungrEntity extends Monster implements NordicFaction {
 
     private float lastDamageAmount = 0.0F;
 
@@ -62,8 +62,8 @@ public class KonungrEntity extends Monster {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(1, new NordicHurtByTargetGoal(this));
     }
 
     @Override

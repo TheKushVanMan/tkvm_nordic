@@ -1,5 +1,6 @@
 package thekushvanman.tkvm_nordic.entity;
 
+import thekushvanman.tkvm_nordic.entity.ai.NordicHurtByTargetGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -23,7 +24,6 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -33,7 +33,7 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import thekushvanman.tkvm_nordic.init.ModSounds;
 
-public class NordicVillagerEntity extends PathfinderMob {
+public class NordicVillagerEntity extends PathfinderMob implements NordicFaction {
 
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(NordicVillagerEntity.class, EntityDataSerializers.INT);
@@ -46,9 +46,12 @@ public class NordicVillagerEntity extends PathfinderMob {
     private static final int WORKSTATION_SEARCH_RADIUS = 8;
     private boolean pendingWorkstationScan = false;
     private int professionCheckCooldown = 0;
-    private static final double GREET_RADIUS = 5.0D;   
-    private static final int GREET_DELAY = 40;          
-    private static final int GREET_COOLDOWN = 600;      
+
+    // Greeting: a villager says an idle line once it has been looking at a nearby
+    // player for a moment. Once per visit, with a cooldown so it never spams.
+    private static final double GREET_RADIUS = 5.0D;   // blocks
+    private static final int GREET_DELAY = 40;          // ticks the player must stay nearby (2 s)
+    private static final int GREET_COOLDOWN = 600;      // ticks before this villager greets again (30 s)
     private int playerNearbyTicks = 0;
     private int greetCooldown = 0;
     private boolean greetedThisVisit = false;
@@ -104,8 +107,8 @@ public class NordicVillagerEntity extends PathfinderMob {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D)
-                .add(Attributes.FOLLOW_RANGE, 16.0D)   
-                .add(Attributes.ATTACK_DAMAGE, 2.0D);   
+                .add(Attributes.FOLLOW_RANGE, 16.0D)   // also the radius villagers are called to help from
+                .add(Attributes.ATTACK_DAMAGE, 2.0D);   // weak punch; required by MeleeAttackGoal
     }
 
     @Override
@@ -116,9 +119,9 @@ public class NordicVillagerEntity extends PathfinderMob {
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 
-        
-        
-        this.targetSelector.addGoal(1, new HurtByTargetGoal(this, NordicVillagerEntity.class).setAlertOthers());
+        // Fights back against whatever hurt it (hits from other villagers are ignored),
+        // and calls nearby Nordic villagers that aren't already fighting to join in.
+        this.targetSelector.addGoal(1, new NordicHurtByTargetGoal(this));
     }
 
     private Profession findProfessionFromNearbyWorkstation() {
@@ -164,8 +167,8 @@ public class NordicVillagerEntity extends PathfinderMob {
         super.customServerAiStep();
         this.tickGreeting();
 
-        
-        
+        // Scan on the first tick after spawning, then re-check every ~5-7 seconds while
+        // still a Homestead villager. Villagers that already have a job keep it.
         boolean recheck = this.getProfession() == Profession.HOMESTEAD && --this.professionCheckCooldown <= 0;
         if (!this.pendingWorkstationScan && !recheck) {
             return;
@@ -215,7 +218,7 @@ public class NordicVillagerEntity extends PathfinderMob {
 
         Player player = this.level().getNearestPlayer(this, GREET_RADIUS);
         if (player == null || player.isSpectator() || this.getTarget() != null) {
-            
+            // Nobody nearby (or we're fighting): the visit is over, so the next one can be greeted.
             this.playerNearbyTicks = 0;
             this.greetedThisVisit = false;
             return;
@@ -241,7 +244,7 @@ public class NordicVillagerEntity extends PathfinderMob {
         return view.dot(toPlayer) > 0.9D && this.hasLineOfSight(player);
     }
 
-    
+    // ---- Sounds: one entity, separate male / female audio sets ----
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {

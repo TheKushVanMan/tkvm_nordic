@@ -27,8 +27,10 @@
   },
   "humanoid_weapon_motions": [
     {
-      "weapon_categories": ["sword"],
-      "style":"common",
+      "weapon_categories": [
+        "sword"
+      ],
+      "style": "common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_longsword",
         "walk": "epicfight:biped/living/walk_longsword",
@@ -36,8 +38,13 @@
       }
     },
     {
-      "weapon_categories": ["longsword", "s_longsword", "s_greatsword", "axe"],
-      "style":"common",
+      "weapon_categories": [
+        "longsword",
+        "s_longsword",
+        "s_greatsword",
+        "axe"
+      ],
+      "style": "common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_greatsword",
         "walk": "epicfight:biped/living/walk_greatsword",
@@ -47,11 +54,16 @@
   ],
   "custom_guard_motion": [
     {
-      "weapon_categories": ["longsword","tachi","sword", "s_longsword"],
-      "style":"common",
+      "weapon_categories": [
+        "longsword",
+        "tachi",
+        "sword",
+        "s_longsword"
+      ],
+      "style": "common",
       "guard": "indestructible:guard/guard_longsword",
       "stamina_cost_multiply": 1,
-      "can_block_projectile" : true
+      "can_block_projectile": true
     }
   ],
   "stun_animations": {
@@ -63,7 +75,11 @@
   },
   "combat_behavior": [
     {
-      "weapon_categories": ["sword", "axe", "spear"],
+      "weapon_categories": [
+        "sword",
+        "axe",
+        "spear"
+      ],
       "style": "common",
       "behavior_series": [
         {
@@ -74,7 +90,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -83,7 +108,16 @@
             },
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -100,7 +134,14 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "cdmoveset:biped/new/dual_greatsword/combat/greatsword_twohand_auto_1",
               "stamina": 5,
@@ -112,12 +153,24 @@
                 "armor_negation": 1
               },
               "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "playsound tkvm_nordic:nordic_male_grunt_light hostile @a ~ ~ ~",
+                  "execute_at_target": false
+                }
               ],
               "play_speed": 1.0
             },
             {
               "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "cdmoveset:biped/new/dual_greatsword/combat/greatsword_twohand_auto_2",
               "stamina": 5,
@@ -129,12 +182,24 @@
                 "armor_negation": 1
               },
               "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "playsound tkvm_nordic:nordic_male_grunt_light hostile @a ~ ~ ~",
+                  "execute_at_target": false
+                }
               ],
               "play_speed": 1.0
             },
             {
               "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "cdmoveset:biped/new/dual_greatsword/combat/greatsword_twohand_auto_3",
               "stamina": 5,
@@ -146,6 +211,11 @@
                 "armor_negation": 1
               },
               "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "playsound tkvm_nordic:nordic_male_grunt_heavy hostile @a ~ ~ ~",
+                  "execute_at_target": false
+                }
               ],
               "play_speed": 1.0
             }

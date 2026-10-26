@@ -27,8 +27,11 @@
   },
   "humanoid_weapon_motions": [
     {
-      "weapon_categories": ["axe", "sword"],
-      "style":"common",
+      "weapon_categories": [
+        "axe",
+        "sword"
+      ],
+      "style": "common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_longsword",
         "walk": "epicfight:biped/living/walk_longsword",
@@ -36,8 +39,10 @@
       }
     },
     {
-      "weapon_categories": ["spear"],
-      "style":"common",
+      "weapon_categories": [
+        "spear"
+      ],
+      "style": "common",
       "livingmotions": {
         "chase": "epicfight:biped/living/run_spear",
         "walk": "epicfight:biped/living/walk_spear",
@@ -47,18 +52,25 @@
   ],
   "custom_guard_motion": [
     {
-      "weapon_categories": ["spear"],
-      "style":"common",
+      "weapon_categories": [
+        "spear"
+      ],
+      "style": "common",
       "guard": "indestructible:guard/guard_spear",
       "stamina_cost_multiply": 1,
-      "can_block_projectile" : true
+      "can_block_projectile": true
     },
     {
-      "weapon_categories": ["longsword","tachi","sword", "s_longsword"],
-      "style":"common",
+      "weapon_categories": [
+        "longsword",
+        "tachi",
+        "sword",
+        "s_longsword"
+      ],
+      "style": "common",
       "guard": "indestructible:guard/guard_longsword",
       "stamina_cost_multiply": 1,
-      "can_block_projectile" : true
+      "can_block_projectile": true
     }
   ],
   "stun_animations": {
@@ -70,7 +82,10 @@
   },
   "combat_behavior": [
     {
-      "weapon_categories": ["sword", "axe"],
+      "weapon_categories": [
+        "sword",
+        "axe"
+      ],
       "style": "common",
       "behavior_series": [
         {
@@ -81,7 +96,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -98,7 +122,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -115,7 +148,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 40,
               "inaction_time": 20,
@@ -132,7 +174,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 40,
               "inaction_time": 20,
@@ -149,7 +200,11 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "wander": 15,
               "inaction_time": 10,
@@ -158,7 +213,11 @@
             },
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "wander": 15,
               "inaction_time": 10,
@@ -175,7 +234,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -184,7 +252,16 @@
             },
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -201,7 +278,14 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "cdmoveset:biped/new/sword/sword_onehand_auto_1",
               "stamina": 5,
@@ -213,12 +297,29 @@
                 "armor_negation": 1
               },
               "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "execute if entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_female_grunt_light neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                },
+                {
+                  "time": 0.0,
+                  "command": "execute unless entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_male_grunt_light neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                }
               ],
               "play_speed": 1.0
             },
             {
               "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "cdmoveset:biped/new/sword/sword_onehand_auto_2",
               "stamina": 5,
@@ -230,6 +331,16 @@
                 "armor_negation": 1
               },
               "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "execute if entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_female_grunt_heavy neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                },
+                {
+                  "time": 0.0,
+                  "command": "execute unless entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_male_grunt_heavy neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                }
               ],
               "play_speed": 1.0
             }
@@ -238,7 +349,9 @@
       ]
     },
     {
-      "weapon_categories": ["spear"],
+      "weapon_categories": [
+        "spear"
+      ],
       "style": "common",
       "behavior_series": [
         {
@@ -249,7 +362,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -266,7 +388,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -283,7 +414,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 40,
               "inaction_time": 20,
@@ -300,7 +440,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 40,
               "inaction_time": 20,
@@ -317,7 +466,11 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "wander": 15,
               "inaction_time": 10,
@@ -326,7 +479,11 @@
             },
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "wander": 15,
               "inaction_time": 10,
@@ -343,7 +500,16 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -352,7 +518,16 @@
             },
             {
               "conditions": [
-                {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate": "epicfight:health", "health":0.9, "comparator": "greater_ratio"}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                },
+                {
+                  "predicate": "epicfight:health",
+                  "health": 0.9,
+                  "comparator": "greater_ratio"
+                }
               ],
               "wander": 20,
               "inaction_time": 20,
@@ -369,7 +544,14 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "epicfight:biped/combat/spear_onehand_auto",
               "stamina": 5,
@@ -381,12 +563,29 @@
                 "armor_negation": 1
               },
               "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "execute if entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_female_grunt_light neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                },
+                {
+                  "time": 0.0,
+                  "command": "execute unless entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_male_grunt_light neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                }
               ],
               "play_speed": 1.0
             },
             {
               "conditions": [
-                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 10.0
+                }
               ],
               "animation": "epicfight:biped/combat/spear_dash",
               "stamina": 5,
@@ -398,6 +597,16 @@
                 "armor_negation": 1
               },
               "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "execute if entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_female_grunt_heavy neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                },
+                {
+                  "time": 0.0,
+                  "command": "execute unless entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_male_grunt_heavy neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                }
               ],
               "play_speed": 1.0
             }
@@ -406,7 +615,9 @@
       ]
     },
     {
-      "weapon_categories": ["fist"],
+      "weapon_categories": [
+        "fist"
+      ],
       "style": "common",
       "behavior_series": [
         {
@@ -417,18 +628,52 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate": "within_eye_height"},
-                {"predicate": "within_distance", "min": 0.0, "max": 2.0}
+                {
+                  "predicate": "within_eye_height"
+                },
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 2.0
+                }
               ],
               "animation": "epicfight:biped/combat/fist_auto1",
-              "stamina": 3
+              "stamina": 3,
+              "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "execute if entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_female_grunt_light neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                },
+                {
+                  "time": 0.0,
+                  "command": "execute unless entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_male_grunt_light neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                }
+              ]
             },
             {
               "conditions": [
-                {"predicate": "within_distance", "min": 0.0, "max": 2.0}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 2.0
+                }
               ],
               "animation": "epicfight:biped/combat/fist_auto2",
-              "stamina": 3
+              "stamina": 3,
+              "command_list": [
+                {
+                  "time": 0.0,
+                  "command": "execute if entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_female_grunt_heavy neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                },
+                {
+                  "time": 0.0,
+                  "command": "execute unless entity @s[nbt={Female:1b}] run playsound tkvm_nordic:nordic_male_grunt_heavy neutral @a ~ ~ ~",
+                  "execute_at_target": false
+                }
+              ]
             }
           ]
         },
@@ -440,7 +685,11 @@
           "behaviors": [
             {
               "conditions": [
-                {"predicate": "within_distance", "min": 0.0, "max": 6.0}
+                {
+                  "predicate": "within_distance",
+                  "min": 0.0,
+                  "max": 6.0
+                }
               ],
               "wander": 20,
               "inaction_time": 10,

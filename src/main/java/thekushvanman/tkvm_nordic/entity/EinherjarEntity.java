@@ -1,5 +1,6 @@
 package thekushvanman.tkvm_nordic.entity;
 
+import thekushvanman.tkvm_nordic.entity.ai.NordicHurtByTargetGoal;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import thekushvanman.tkvm_nordic.init.ModSounds;
@@ -16,12 +17,11 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraftforge.common.ForgeMod;
 import thekushvanman.tkvm_nordic.init.ModItems;
 
 
-public class EinherjarEntity extends Monster {
+public class EinherjarEntity extends Monster implements NordicFaction {
 
     public EinherjarEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
@@ -53,8 +53,8 @@ public class EinherjarEntity extends Monster {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0D, true));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(1, new NordicHurtByTargetGoal(this));
     }
 
     @Override
